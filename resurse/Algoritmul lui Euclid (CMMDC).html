@@ -1,0 +1,214 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Algoritmul lui Euclid (CMMDC)
+			</div>
+			<div id="lectie">
+				
+				Algoritmul lui Euclid reprezintă o metodă eficientă de calculare a celui mai mare divizor comun (CMMDC) a două numere întregi. Algoritmul bazat pe împărţire (implementat în C++):
+				
+				<div id="cod">
+				<pre>
+int cmmdc(int a, int b)
+{
+    int t;
+    while (b != 0)
+    {
+        t = b;
+        b = a % b;
+        a = t;
+    }
+    return a;
+}
+				</pre>
+				</div>
+				
+				Funcţia de mai sus returnează CMMDC al numerelor a şi b. Există şi versiunea bazată pe scăderi repetate:
+				
+				<div id="cod">
+				<pre>
+int cmmdc(int a, int b)
+{
+    if(a == 0)
+        return b;
+    while(b != 0)
+    {
+        if(a > b) a -= b;
+        else b -= a;
+    }
+    return a;
+}
+				</pre>
+				</div>
+				
+				Bineînţeles că poate fi implementat şi recursiv:
+				
+				<div id="cod">
+				<pre>
+int cmmdc(int a, int b)
+{
+    if(b == 0)
+        return a;
+    else return cmmdc(b, a % b);
+}
+				</pre>
+				</div>
+				
+				Pentru a calcula cel mai mic multiplu comun, înmulţiţi numerele a şi b, şi împărţiţi prin cmmdc. Exemplu:
+				
+				<div id="cod">
+				<pre>
+12 * 6 / cmmdc(12, 6);
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Algoritmul lui Euclid extins
+				</div>
+				
+				Algoritmul lui Euclid extins găseşte, pe lângă cmmmd al numerelor a şi b, întregii x şi y care satisfac identitatea lui Bézout:
+				<pre>	ax + by = cmmdc(a , b)</pre>
+				Implementarea algoritmului în C++:
+				
+				<div id="cod">
+				<pre>
+int euclidExtins(int a, int b, int& lastX, int& lastY)
+{
+    int x = 0, y = 1, q; lastX = 1; lastY = 0;
+    // variabile temporare
+    int tA, tX, tY;
+    while(b != 0)
+    {
+        q = a / b; // aveti grija ca a > b
+        tA = b; b = a % b; a = tA;
+  
+        tX = x; x = lastX - q * x; lastX = tX;
+        tY = y; y = lastY - q * y; lastY = tY;
+    }
+    return a;
+}
+				</pre>
+				</div>
+				
+				Algoritmul returnează cmmdc(a, b), iar prin referinţele lastX şi lastY returnează cei doi întregi x şi y. Exemplu:
+				
+				<div id="cod">
+				<pre>
+int main()
+{
+    int x, y;
+
+    cout << euclidExtins(27, 6, x, y) << '\n'; // 3
+    cout << x << ' ' << y; // 1 -4
+
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+			</div>
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>			
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

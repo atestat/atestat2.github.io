@@ -1,0 +1,497 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Functii (Subprograme)
+			</div>
+			<div id="lectie">
+			
+				<div id="subtitlu">
+					CE ESTE O FUNCŢIE?
+				</div>
+			
+				O funcţie (subprogram) este un grup de instrucţiuni apelabil (invocabil) din alte părţi ale programului. De exemplu, main este o funcţie.
+A apela o funcţie înseamnă a o executa.
+Funcţiile ajută la modularizarea programului, la structurarea acestuia în unităţi logice.
+O funcţie se declară în felul următor:
+
+				<div id="cod">
+				<pre>
+tip nume(lista_param); // Prototipul functiei
+				</pre>
+				</div>
+				
+				Exemplu:
+				
+				<div id="cod">
+				<pre>
+int suma(int a, int b);
+				</pre>
+				</div>
+				
+				lista_param - lista de parametri, despărţiţi prin virgulă, este opţională. 
+Parantezele sunt obligatorii. Ele deosebesc funcţiile de alte entităţi C++ (de exemplu, variabile).
+				
+				<div id="cod">
+				<pre>
+void nimic(); // functie fara parametri
+				</pre>
+				</div>
+				
+				Tipul void reprezintă absenţa tipului. Cu alte cuvinte, funcţiile care nu returnează nicio valoare, au tipul void.
+Funcţiile pot returna valori codului apelant (locul de unde a fost apelată funcţia) prin intermediul instrucţiunii return. 
+După declarare, o funcţie trebuie definită undeva în program.
+
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int suma(int, int); // Declarare
+
+int main()
+{
+    int x, y;
+    cout << "Da-mi doua numere intregi: ";
+    cin >> x >> y;
+    cout << "Suma lor este " << suma(x, y);
+    return 0;
+}
+
+int suma(int a, int b) // Definire
+{
+    int rezultat = a + b;
+    // Puteam scrie direct
+    // return a + b;
+    return rezultat;
+}
+				</pre>
+				</div>
+				
+				Când declaraţi o funcţie, puteţi omite numele parametrilor (aşa cum am făcut în exemplu), dar trebuie să precizaţi tipul lor. 
+Parametrii sunt variabile locale funcţiei (vizibile numai în blocul funcţiei). 
+Instrucţiunea return întrerupe execuţia funcţiei şi returnează valoarea expresiei, din dreapta, codului apelant. 
+Într-o funcţie puteţi avea mai multe instrucţiuni return. 
+Observaţi cum se apelează o funcţie: suma(x, y);. Dacă funcţia nu are parametri, se apelează doar cu nume + paranteze: funcFaraParam();.
+Când execuţia unei funcţii se termină, controlul programului revine în punctul apelării şi programul îşi continuă execuţia normal. 
+Funcţiile void nu returnează valori, ele doar îndeplinesc o sarcină, deci nu pot avea instrucţiunea return expr;. 
+Puteţi însă folosi return; ca să întrerupeţi execuţia unei funcţii void.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+void afiseazaText() // Declarare + Definire
+{
+    for (int i = 0; i < 5; i++)
+        cout << "Hello functions!";
+}
+
+int main()
+{
+    // Se va afisa de 5 ori textul:
+    // Hello functions!
+    afiseazaText();
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Puteţi declara şi defini o funcţie în acelaşi loc, dar numai înainte de main, altfel compilatorul nu va recunoaşte funcţia. 
+Funcţiile void nu pot fi folosite în expresii, deoarece expresiile au în componenţa lor operatori care aşteaptă valori, ori o funcţie void nu returnează nicio valoare. 
+O funcţie poate avea orice număr de parametri. 
+Variabilele declarate într-o funcţie sunt locale, adică sunt vizibile numai în respectiva funcţie. Ele nu pot fi folosite în afara ei (valabil şi pentru parametri). 
+Argumentele funcţiei sunt datele (variabile, expresii, constante, etc.) transmise funcţiei şi primite de parametrii acesteia.
+De exemplu, în apelul suma(x, y); argumentele sunt variabilele x şi y.
+Parametrii unei funcţii pot avea valori implicite (default). Parametrii default trebuie poziţionaţi la sfârşitul listei de parametri.
+După ce aţi declarat un parametru implicit, nu mai aveţi voie să declaraţi parametri normali în continuare acestuia, ci doar parametri impliciţi.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+double arieCerc(double raza, double PI = 3.14)
+{
+    return 2 * PI * raza * raza;
+}
+
+int main()
+{
+    cout << "Aria cercului de raza 2 este " << arieCerc(2.0) << '\n'; // PI == 3.14
+    cout << "Aria cercului de raza 2 este " << arieCerc(2.0, 3.141592);
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Se va afişa
+				
+				<div id="cod">
+				<pre>
+Aria cercului de raza 2 este 25.12
+Aria cercului de raza 2 este 25.1327
+				</pre>
+				</div>
+				
+				Când nu transmiteţi o valoare parametrului implicit, compilatorul va folosi valoarea implicită, dată de voi.
+				
+				<div id="subtitlu">
+					SUPRAÎNCĂRCAREA (OVERLOADING) FUNCŢIILOR
+				</div>
+				
+				Supraîncărcaţi o funcţie atunci când definiţi mai multe versiuni ale aceleiaşi funcţii. 
+Funcţia trebuie să aibă acelaşi nume, dar lista de parametri trebuie să difere prin numărul parametrilor sau prin tipul parametrilor (sau ambele). 
+Tipul funcţiei poate fi diferit, dar nu este necesar să fie aşa. 
+Versiunile diferă unele de altele numai prin lista de parametri!
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+// Aria patratului
+double arie(double lungime)
+{
+    return lungime * lungime;
+}
+
+// Aria dreptunghiului
+double arie(double lungime, double latime)
+{
+    return lungime * latime;
+}
+
+int main()
+{
+    cout << "Aria patratului de L = 2 este " << arie(2.0) << '\n';
+    cout << "Aria dreptunghiului de L = 3 si l = 4 este " << arie(3.0, 4.0);
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+Aria patratului de L = 2 este 4
+Aria dreptunghiului de L = 3 si l = 4 este 12
+				</pre>
+				</div>
+				
+				Funcţia arie este supraîncărcată (overloaded). Am două versiuni care diferă prin numărul de parametri. 
+Compilatorul se foloseşte de tipul şi numărul de argumente ca să invoce funcţia corectă.
+				
+				<div id="subtitlu">
+					TRANSMITEREA PRIN VALOARE ŞI PRIN REFERINŢĂ
+				</div>
+				
+				Atunci când transmiteţi argumente (şi sunt variabile) unei funcţii, transmiteţi de fapt o copie a acelor variabile. 
+Aceasta este transmiterea prin valoare (pass by value). 
+Orice modificare a parametrilor unei funcţii este vizibilă numai în acea funcţie. 
+Variabilele - folosite ca argumente - rămân nemodificate.
+
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+void modifica(int a)
+{
+    a = a + 5;
+    cout << "a are valoarea: " << a << '\n';
+}
+
+int main()
+{
+    int x = 1;
+    cout << "x inainte de apel: " << x << '\n';
+    modifica(x);
+    cout << "x dupa apel: " << x;
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+x inainte de apel: 1
+a are valoarea: 6
+x dupa apel: 1
+				</pre>
+				</div>
+				
+				O funcţie poate returna decât o singură valoare printr-un return, ca la matematică. 
+Uneori vrem ca o funcţie să poată returna mai multe valori. Un mod prin care putem obţine acest lucru este transmiterea prin referinţă (pass by reference). 
+Atunci când transmiteţi prin referinţă, parametrii funcţiei alterează direct conţinutul variabilelor argumente (nu mai există nicio copie). 
+Ca să transmiteţi prin referinţă folosiţi ampersand (&) între tipul parametrului şi numele acestuia. 
+Parametrii referinţă acceptă numai variabile. NU acceptă constante (deoarece nu pot fi alterate)!
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+void modifica(int& a) // Nu uitati de ampersand !
+{
+    a = a + 5;
+    cout << "a are valoarea: " << a << '\n';
+}
+
+int main()
+{
+    int x = 1;
+    cout << "x inainte de apel: " << x << '\n';
+    modifica(x);
+    cout << "x dupa apel: " << x;
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+x inainte de apel: 1
+a are valoarea: 6
+x dupa apel: 6
+				</pre>
+				</div>
+				
+				<mark>Vectorii se transmit prin referinţă!</mark>
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+void modifica(int v[], int l)
+{
+    for (int i = 0; i < l; i++)
+        v[i] += 5; // v[i] = v[i] + 5;
+}
+
+int main()
+{
+    int w[] = {1, 2, 3, 4}, k = 4;
+    modifica(w, k);
+
+    for (int i = 0; i < k; i++)
+        cout << w[i] << ' ';
+
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+6 7 8 9
+				</pre>
+				</div>
+				
+				Observaţi cum se transmite un vector ca parametru. 
+Numărul de elemente poate lipsi (valabil doar pentru prima dimensiune). 
+Dacă aş fi avut o matrice de 2 x 3, atunci aş fi scris:
+				
+				<div id="cod">
+				<pre>
+void modifica(int v[][3], ...) ...
+				</pre>
+				</div>
+				
+				Veţi înţelege mai bine aceste lucruri după ce veţi învăţa ceva despre pointeri.
+				
+				<div id="subtitlu">
+					FUNCŢII RECURSIVE
+				</div>
+				
+				O funcţie care se autoapelează se numeşte recursivă. 
+Aveţi grijă ca funcţia să aibă o condiţie de terminare, altfel puteţi crea o repetiţie infinită. 
+Parametrii funcţiilor şi variabilele locale sunt încărcate, stocate, pe Stivă (o regiune din memorie structurată pe principiul stivei, LIFO), iar în cazul unei funcţii recursive infinite, Stiva se poate umple repede (stack overflow) cauzând un crash al programului. 
+Factorialul unui număr poate fi calculat cu o funcţie recursivă (deşi se poate face acelaşi lucru şi cu un loop).
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int fact(int n)
+{
+    if (n == 0) // Conditia de terminare
+        return 1;
+    else
+        return n * fact(n - 1);
+}
+
+int main()
+{
+    cout << fact(0) << '\n';
+    cout << fact(3) << '\n';
+    cout << fact(8) << '\n';
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+1
+6
+40320
+				</pre>
+				</div>
+				
+				Ca să înţelegeţi mai bine mecanismul recursivităţii vizionaţi acest clip de pe Youtube:
+				
+				<video id="fnt_mp4" controls >
+				<source src="functii_recursive.mp4" type="video/mp4">
+				</video>
+				
+				<div id="subtitlu">
+					FUNCŢII INLINE
+				</div>
+				
+				Atunci când o funcţie este apelată, parametrii şi variabilele locale sunt încărcate pe Stivă. 
+Acest proces consumă resurse şi timp de execuţie. 
+Pentru funcţiile ce efectuează puţine operaţii, apelarea poate costa mai mult timp şi spaţiu de execuţie decât dacă aceste operaţii ar fi executate direct în cod. 
+Din acest motiv există keyword-ul inline. 
+Cu inline programatorii pot cere compilatorului să insereze blocul funcţiei în punctul apelării, în loc să creeze instrucţiunile de apel. 
+O funcţie se declară inline în felul următor:
+
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+inline double myPI()
+{
+    return 3.14159265359;
+}
+
+int main()
+{
+    cout << myPI();
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Nu declaraţi inline funcţii recursive sau funcţii complexe! 
+Mărimea programului poate creşte considerabil. 
+Compilatoarele moderne de astăzi optimizează automat codul sursă. 
+Unele dintre ele vor refuza inline, chiar dacă programatorul le cere explicit (de exemplu, compilatoarele care optimizează mărimea programului), altele vor face automat inline anumite funcţii (compilatoarele optimizate pentru viteză), chiar dacă programatorul nu cere acest lucru.
+				
+			</div>		
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

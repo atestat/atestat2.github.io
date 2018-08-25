@@ -1,0 +1,193 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Structura unui program C++
+			</div>
+			<div id="lectie">
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    // Afiseaza pe ecran Hello World
+    cout << "Hello World";
+    return 0;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					DIRECTIVELE PREPROCESOR
+				</div>
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+				</pre>
+				</div>
+				
+				Această linie se numeşte directivă preprocesor sau simplu directivă. Se deosebeşte de celelalte linii de cod prin faptul că începe cu #. 
+Rolul acestor linii este multiplu. Aici, directiva #include are rolul de a preciza compilatorului faptul că vom folosi în program entităţile (funcţii, clase, constante, etc.) din fişierul iostream (cout este un obiect definit în namespace-ul std din iostream). 
+În acest mod putem scrie programe pornind de la altele existente, fără a rescrie conţinutul lor în noul program. E un mod de a salva timp, spaţiu şi bani. 
+Fişierul iostream face parte din standardul C++ (compilatorul ştie unde se află, de aceea nu trebuie să precizăm întreg path-ul).
+Directivele nu se termină cu punct şi virgulă (Reţineţi asta!). 
+Următoarea linie using namespace std; spune că vom folosi toate numele (denumirile entităţilor) din secţiunea (această secţiune se numeşte de fapt namespace; veţi afla mai târziu ce este acesta) std din iostream. 
+Majoritatea programelor C++ vor începe cu aceste două linii. Fără ele nu veţi putea afişa pe ecran şi nu veţi putea citi date de la user.
+				
+				<div id="subtitlu">
+					FUNCŢIA MAIN
+				</div>
+				
+				Un program C++ constă practic doar din funcţia main. Atunci când rulaţi programul, sistemul de operare invocă automat funcţia numită main. 
+Funcţiile - alte denumiri pentru conceptul de funcţie sunt: procedură, subprogram, metodă (în OOP) - sunt entităţi ce grupează sub un singur nume o porţiune de cod din program. 
+Funcţiile pot fi apelate (invocate) precizând numele acestora. Atunci când o funcţie este invocată, codul funcţiei - se află între acolade - va fi executat. 
+Observaţi că o funcţie permite executarea aceluiaşi cod de mai multe ori fără a scrie respectivul cod de mai multe ori în program.
+Main este entry-pointul (punctul de intrare) programului. Aproape toate limbajele de programare necesită definirea unei funcţii main. Fiecare program trebuie să aibă un punct de start, iar acest punct este funcţia main. 
+Linia int main() se numeşte antetul sau header-ul funcţiei. În antet apar: tipul valorii returnate de funcţie (aici int), numele funcţiei (aici main), parametrii între paranteze (dacă există). 
+Corpul funcţiei (function body) constă din cele două acolade şi codul definit între ele. 
+Instrucţiunea return 0; returnează valoarea 0 şi totodată opreşte execuţia funcţiei. Deoarece sistemul de operare a apelat funcţia, tot el este acela care va primi valoarea returnată de main. Codul 0 semnifică faptul că programul a rulat fără probleme. 
+				
+				<div id="subtitlu">
+					INSTRUCŢIUNI ŞI COMENTARII
+				</div>
+				
+				Instrucţiunile (statements) reprezintă comenzi către calculator; sarcinile pe care acesta trebuie să le îndeplinească. 
+Toate instrucţiunile trebuie să se termine cu punct şi virgulă ; (Reţineţi asta!).
+Puteţi avea mai multe instrucţiuni pe aceeaşi linie atâta timp cât le separaţi prin punct şi virgulă. 
+În programul de mai sus, instrucţiuni sunt:
+
+				<div id="cod">
+				<pre>
+using namespace std;
+cout << "Hello World";
+return 0;
+				</pre>
+				</div>
+				
+				Directivele sunt instrucţiuni - speciale - pentru preprocesor. Preprocesorul este executat de compilator înainte ca procesul de compilare să aibă loc. 
+Linia // Afiseaza pe ecran Hello World reprezintă un comentariu (comment). Comentariile nu fac nimic (nu sunt instrucţiuni). Sunt de 2 feluri: 
+- comentariile întinse pe un rând (încep cu //); 
+- comentariile întinse pe mai multe rânduri (încep cu /* şi se termină cu */). Exemplu:
+				
+				<div id="cod">
+				<pre>
+/* Grumpy wizards make toxic brew 
+for the evil Queen and Jack. */
+				</pre>
+				</div>
+				
+				Comentariile sunt ignorate de compilator. Comentariile sunt folosite, în general, pentru a explica anumite părţi ale programului. 
+Instrucţiunea cout << "Hello World"; afişează pe ecran textul Hello World.
+Instrucţiunile din program sunt executate secvenţial (una după alta) de la început până la sfârşit. După ce toate instrucţiunile au fost executate, programul îşi încetează execuţia. 
+Şi compilatorul scanează secvenţial codul sursă atunci când îl translatează în cod maşină. 
+Motivul pentru care browserul - pe care-l folosiţi acum - nu se opreşte este că acesta aşteaptă comenzi de la user. Dacă userul apasă pe X, atunci browserul se va opri, deoarece comanda de terminare va fi ultima de îndeplinit. 
+Este posibil să alterăm execuţia secvenţială a programului folosind structurile de control (for, if, while, etc.). Acestea modifică flow-ul execuţiei programului în funcţie de anumite condiţii. Voi discuta despre aceste lucruri mai târziu.
+				
+			</div>	
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

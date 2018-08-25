@@ -1,0 +1,414 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Stiva (Stack)
+			</div>
+			<div id="lectie">
+				
+				Stiva (Stack) este un container (sau colecţie) de obiecte bazat pe principiul last-in-first-out (LIFO). Adică obiectele (numere, caractere, etc.) pot fi adăugate în stivă în orice moment, dar numai cel mai recent (cel din vârf) poate fi eliminat în orice moment. Imaginaţi-vă stiva ca un turn de obiecte, cel mai recent adăugat aflându-se în vârf, iar cel mai vechi la bază. Intraţi pe http://www.cosc.canterbury.ac.nz/mukundan/dsal/StackAppl.html (aveţi nevoie de Java) sau http://acc6.its.brooklyn.cuny.edu/~cis22/animations/tsang/html/STACK/stack640.html pentru a înţelege mai bine. Folosiţi Push pentru a adăuga obiecte şi Pop pentru a elimina obiectul din vârf (top), iar butonul Top afişează valoarea vârfului. Stivele sunt folosite în multe aplicaţii cum ar fi: browser-ele web care memorează adresele site-urilor recent vizitate, opţiunea undo din editoarele de text, ş.a. Acum că aveţi o idee despre stive, să trecem la operaţiile pe care stiva le implementează. Stiva este o structură de date care suportă următoarele operaţii:
+				
+				<ol>
+				
+					<li>push(ob): adaugă un obiect în vârful stivei.</li>
+					<li>pop(): elimină obiectul din vârful stivei.</li>
+					<li>top(): returnează o referinţă către vârful stivei fără a elimina obiectul.</li>
+					<li>size(): returnează numărul obiectelor din stivă.</li>
+					<li>isEmpty(): returnează true dacă stiva este vidă, altfel false.</li>
+					
+				</ol>
+				
+				Deoarece am zis că stiva este un container de obiecte, acest lucru înseamnă că ar trebui să pot declara stive de orice tip: int, char, bool, etc. sau un tip definit de utilizator. Să definesc câte o stivă pentru fiecare tip ar însemna să fiu nebun, de aceea voi implementa o clasă generică Stiva, cu parametrul generic T.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt;
+class Stiva
+{
+public:
+    Stiva(); // Constructor | Initializarea stivei
+    ~Stiva(); // Destructor
+    int size() const; // Returneaza numarul elementelor din stiva
+    bool isEmpty() const; // Este stiva vida?
+    const T& top() const; // Returneaza o referinta constanta catre varf
+    void push(const T& ob); // Adauga un element
+    void pop(); // Elimina elementul din varf
+private:
+    struct Element // Implementeaza un element de stiva
+    {
+        T data; // Informatia memorata in elementul stivei
+        Element * below; // Elementul anterior / dedesubt
+    };
+    Element * varf; // Varful stivei
+    int count; // Data membra cu care numar elementele stivei
+};
+				</pre>
+				</div>
+				
+				Observaţi că la unele funcţii apare referinţa constantă. De ce fac asta? De ce nu returnez pur şi simplu un obiect T şi nu o referinţă? Datorită eficienţei. Atunci când returnez o referinţă nu se mai alocă, temporar (deci va fi dealocat; un overhead suplimentar), spaţiu pentru obiectul returnat sau pentru parametrul formal, deoarece pot accesa direct variabila referită. Referinţa este constantă tocmai pentru că nu vreau să modific din greşeală argumentul sau obiectul returnat, plus că nu aş putea transmite valori concrete (de ex: 1, 2, 'c', 4.6, etc.) funcţiei push(), dacă referinţa nu ar fi constantă.
+				
+				<div id="subtitlu">
+					Iniţializarea Stivei
+				</div>
+				
+				Iniţializarea stivei presupune crearea stivei vide, adică elementul varf indică NULL (nullptr). Pentru cei care folosiţi compilatoare noi, cum ar fi cel din Visual Studio, folosiţi nullptr în loc de NULL, deoarece NULL este doar un simplu macro, este 0, este un întreg şi nu reprezintă concret o adresă inexistentă. Stiva este iniţializată în constructor:
+				
+				<div id="cod">
+				<pre>
+template<typename T> bool Stiva<T>::isEmpty() const
+{
+    return varf == nullptr;
+}
+				</pre>
+				</div>
+				
+				Calificatorul const informează compilatorul că respectiva funcţie nu modifcă obiectele stivei, nu le modifica datele membre.
+				
+				<div id="subtitlu">
+					Numărul de elemente dintr-o Stivă
+				</div>
+				
+				Pur şi simplu returnăm valoarea membrului count.
+				
+				<div id="cod">
+				<pre>
+template<typename T> int Stiva<T>::size() const
+{
+    return count;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Adăugarea unui element în Stivă
+				</div>
+				
+				Algoritmul este simplu. Aloc memorie pentru un obiect de tip Element -> Scriu informaţia în obiect -> Predecesorul acestui obiect este varf -> Noul element devine varf. Se incrementează count. Funcţia push() va implementa această operaţie.
+				
+				<div id="cod">
+				<pre>
+template<typename T> void Stiva<T>::push(const T& ob)
+{
+    if(isEmpty()) // Daca stiva este vida
+    {
+        varf = new Element;
+        varf->data = ob;
+        varf->below = nullptr; // Este baza! Primul element adaugat
+        count = 1; 
+    }
+    else
+    {
+        Element * p = new Element;
+        p->data = ob;
+        p->below = varf; // Dedesubt se afla fostul varf
+        varf = p; // p devine noul varf
+        ++count;  // S-a mai adaugat un element
+    }
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Eliminarea unui element din Stivă
+				</div>
+				
+				Se poate elimina numai elementul din vârf. Se salvează adresa vârfului -> Elementul dedesubt devine vârf -> Se eliberează memoria fostului vârf. Se decrementează count. Funcţia pop() va implementa această operaţie.
+				
+				<div id="cod">
+				<pre>
+template<typename T> void Stiva<T>::pop()
+{
+    // Daca stiva este vida, genereaza o exceptie
+    if(isEmpty()) throw "Eroare! Stiva Vida!";
+    Element * q = varf; // Salvez varful
+    varf = varf->below; // Elementul anterior devine noul varf
+    delete q;
+    --count; // S-a mai eliminat un element
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Obţinerea elementului din vârful Stivei
+				</div>
+				
+				Se returnează o referinţă constantă către varf->data.
+				
+				<div id="cod">
+				<pre>
+template<typename T> const T& Stiva<T>::top() const
+{
+    if(isEmpty()) throw "Eroare! Stiva Vida!";
+    return varf->data;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Eliberarea spaţiului de memorie ocupat de Stivă
+				</div>
+				
+				Se distruge pe rând fiecare element al stivei. De asta se va ocupa destructorul clasei.
+				
+				<div id="cod">
+				<pre>
+template<typename T> Stiva<T>::~Stiva()
+{
+    while(varf != nullptr)
+    {
+        Element * q = varf;
+        varf = varf->below;
+        delete q;
+    }
+}
+				</pre>
+				</div>
+				
+				Dacă aveţi probleme cu nullptr, atunci folosiţi NULL. De asemenea vă recomand să folosiţi Visual Studio.
+În continuare vă propun să creaţi un nou fişier Stiva.h (header) şi să-l adăugaţi la proiectul vostru, după care în fişierul main (unde aveţi funcţia main) să adăugaţi, la început, directiva: #include "Stiva.h". Adăugaţi următorul cod în Stiva.h:
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt;
+class Stiva
+{
+public:
+    // Constructor | Initializarea stivei
+    Stiva() {
+        varf = nullptr; // stiva vida
+        count = 0; // zero elemente
+    }
+    ~Stiva(); // Destructor
+    int size() const { return count; } // Returneaza numarul elementelor din stiva
+    bool isEmpty() const { return varf == nullptr; } // Este stiva vida?
+    const T& top() const { // Returneaza o referinta constanta catre varf
+        if(isEmpty()) throw "Eroare! Stiva Vida!"; 
+        return varf->data; 
+    } 
+    void push(const T& ob); // Adauga un element
+    void pop(); // Elimina elementul din varf
+private:
+    struct Element // Implementeaza un element de stiva
+    {
+        T data; // Informatia memorata in elementul stivei
+        Element * below; // Elementul anterior / dedesubt
+    };
+    Element * varf; // Varful stivei
+    int count; // Data membra cu care numar elementele stivei
+};
+
+template<typename T> void Stiva<T>::push(const T& ob)
+{
+    if(isEmpty()) // Daca stiva este vida
+    {
+        varf = new Element;
+        varf->data = ob;
+        varf->below = nullptr; // Este baza! Primul element adaugat
+        count = 1; 
+    }
+    else
+    {
+        Element * p = new Element;
+        p->data = ob;
+        p->below = varf; // Dedesubt se afla fostul varf
+        varf = p; // p devine noul varf
+        ++count;  // S-a mai adaugat un element
+    }
+}
+
+template<typename T> void Stiva<T>::pop()
+{
+    // Daca stiva este vida, genereaza o exceptie
+    if(isEmpty()) throw "Eroare! Stiva Vida!";
+    Element * q = varf; // Salvez varful
+    varf = varf->below; // Elementul anterior devine noul varf
+    delete q;
+    --count; // S-a mai eliminat un element
+}
+
+template<typename T> Stiva<T>::~Stiva()
+{
+    while(varf != nullptr)
+    {
+        Element * q = varf;
+        varf = varf->below;
+        delete q;
+    }
+}
+				</pre>
+				</div>
+				
+				PROBLEMĂ: Într-o stivă sunt memorate numere din intervalul [1, 10]. Să se elimine numerele pare.
+Deoarece numai informaţia din vârf poate fi prelucrată, pentru a ajunge la un anumit element trebuie eliminate toate elementele până la acel element. În acest caz, pentru a nu pierde informaţia din celelalte elemente (aici, numerele impare), voi descărca elementele impare într-o stivă de rezervă (temp), iar după ce voi scăpa de numerele pare, voi încărca numerele impare din stiva de rezervă înapoi în stiva iniţială.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include "Stiva.h"
+using namespace std;
+
+int main()
+{
+    Stiva<int> st; // Voi memora intregi | int
+    Stiva<int> temp; // Stiva de rezerva in care voi memora numerele impare
+ 
+    for(int i = 1; i <= 10; i++)
+    st.push(i); // Adaug cele zece numere
+
+    while(!st.isEmpty()) // Cat timp stiva nu este vida
+    {
+        if(st.top() % 2 == 0)
+        st.pop(); // Daca este par, il elimin
+        else
+        {
+            temp.push(st.top()); // Salvez numarul impar
+            st.pop();
+        }
+    }
+
+    // Acum incarc numerele impare inapoi in stiva st
+    while(!temp.isEmpty())
+    {
+        st.push(temp.top());
+        temp.pop();
+    }
+
+    // Acum afisez stiva st
+    while(!st.isEmpty())
+    {
+        cout << st.top() << '\n';
+        st.pop();
+    }
+
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+9
+7
+5
+3
+1
+				</pre>
+				</div>
+				
+				Trebuie să ştiţi că Standard Template Library (STL) implementează o structură de tip stivă în clasa stack, ce se găseşte în headerul stack. Are aceeiaşi membri (isEmpty() este empty()) ca şi clasa definită de mine, singura diferenţa fiind că operaţiile top() şi pop() pentru o stivă vidă sunt nedefinite, adică nu se generează o excepţie (aşa cum am făcut eu). Deci este responsabilitatea programatorului pentru a se asigura că nu aplică acele operaţii pe o stivă vidă.
+				
+				<div id="cod">
+				<pre>
+#include &lt;stack&gt;
+using std::stack; 
+stack<int> myStack;
+				</pre>
+				</div>
+				
+			</div>
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

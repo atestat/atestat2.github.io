@@ -1,0 +1,246 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style2.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Tinta
+			</div>
+			<div id="problema">
+				<br>
+				<div id="cerinta">
+					<pre><b><font size="5px">	Cerinta</font></b></pre>
+					Andrei are o pasiune pentru trasul la țintă. Jucându-se cu numere, visează la o nouă tablă pentru pasiunea sa. Tabla visată este de formă pătrată cu <font color="red"><b>n</b></font> linii și <font color="red"><b>n</b></font> coloane, iar numerele, de la <font color="red"><b>1</b></font> la <font color="red"><b>n * n</b></font>, le poziționează în țintă, ca în imaginea alăturată.
+<br />Andrei, fiind un foarte bun țintaș, nu nimerește niciodată pe pătrățelele de pe contur. Când țintește o pătrățică din interior, el obține drept punctaj suma valorilor din cele opt pătrățele vecine.
+					<br><br><img src="tinta.png" width="350px" height="300px"/><br><br>
+					Cunoscând <font color="red"><b>n</b></font> numărul de linii și de coloane ale țintei:
+					<ol type="a">
+						<li>Ajutați-l pe Andrei să construiască ținta visată.</li>
+						<li>Câte punctaje distincte poate să obțină Alex dacă are o singură săgeată?</li>
+						<li>Afișați punctajele distincte găsite.</li>
+					</ol>
+				</div>
+				<br>
+				<div id="DI">
+					<pre><b><font size="5px">	Date de intrare</font></b></pre>
+					Fișierul de intrare <font color="red"><b>tinta.in</b></font> conține pe prima linie numărul natural n, indicând numărul de linii și de coloane ale țintei.
+				</div>
+				<br>
+				<div id="DE">
+					<pre><b><font size="5px">	Date de iesire</font></b></pre>
+					Fișierul de ieșire <font color="red"><b>tinta.out</b></font> va conține pe primele <font color="red"><b>n</b></font> linii câte <font color="red"><b>n</b></font> numere naturale, separate prin câte un spațiu, reprezentând numerele de pe cele <font color="red"><b>n</b></font> linii ale țintei. Pe linia <font color="red"><b>n+1</b></font> se va afișa un singur număr  <font color="red"><b>p</b></font> reprezentând numărul de punctaje distincte. Pe linia <font color="red"><b>n+2</b></font> se vor afișa <font color="red"><b>p</b></font> numere naturale separate prin câte un spațiu și ordonate strict crescător, reprezentând punctajele distincte.
+				</div>
+				<br>
+				<div id="restrictii">
+					<pre><b><font size="5px">	Restrictii si precizari</font></b></pre>
+					<ul id="lista">
+						<li id="element"><font color="red"><b>3 ≤ n ≤ 1000</font></b></li>
+						<li id="element">Pentru prima cerinţă afişată corect se va acorda 40% din punctaj; pentru a doua cerință se va acorda 20% din punctaj; pentru cea de-a treia cerință se va acorda 40% din punctaj.</li>
+					</ul>
+				</div>
+				<br>
+				<div id="exemplu">
+					<pre><b><font size="5px">	Exemplu  1</font></b></pre>
+					<div id="tabel">
+						<div id="date_de_intrare">
+						
+							<div id="antet_di">
+							tinta.in
+							</div>
+							
+							<div id="di_ex">
+								3
+							</div>
+						
+						</div>
+						<div id="date_de_iesire">
+						
+							<div id="antet_de">
+							tinta.out
+							</div>
+							
+							<div id="de_ex">
+								1  2  6 <br /> 
+								3  5  7 <br />
+								4  8  9 <br />
+								1 <br />
+								40
+							</div>
+						
+						</div>
+						
+					</div>
+				</div>
+				<br>
+				<div id="explicatie">
+				
+					<pre><b><font size="5px">	Explicatie</font></b></pre>
+					Andrei poate ținti doar în pătrățelul interior (cel pe care avem 5), deci obține un singur punctaj, iar suma este 40.
+				
+				</div>
+				<br>
+				<div id="exemplu">
+					<pre><b><font size="5px">	Exemplu  2</font></b></pre>
+					<div id="tabel">
+						<div id="date_de_intrare">
+						
+							<div id="antet_di">
+							tinta.in
+							</div>
+							
+							<div id="di_ex">
+								4
+							</div>
+						
+						</div>
+						<div id="date_de_iesire">
+						
+							<div id="antet_de">
+							tinta.out
+							</div>
+							
+							<div id="de_ex">
+								1 2 6 7<br />
+								3 5 8 13<br />
+								4 9 12 14<br />
+								10 11 15 16<br />
+								3<br />
+								45 68 91
+							</div>
+						
+						</div>
+						
+					</div>
+					
+				</div>
+				<br>
+				<div id="explicatie">
+				
+					<pre><b><font size="5px">	Explicatie</font></b></pre>
+					Andrei poate ținti doar pătrăţelele 5, 8, 9 sau 12.
+				
+				</div>
+				<br><br><br><br><br><br><br>
+				<div id="solutie">
+				<pre><b><font size="5px">	Solutie</font></b></pre><br>
+	<b>Inainte de a vedea solutia, rezolva mai intai in Code::Blocks!</b>
+				<br><br><br><br>
+				<div id="download">
+				 <a href="tinta.cpp" download><button onclick="myFunction()" class="buton">DOWNLOAD</button></a>
+				 <script>
+					
+					function myFunction() {
+						var txt;
+						if(confirm("Ai rezolvat in Code::Blocks?")) {
+							txt="Bravo!";
+						} else {
+							txt="Mai incearca";
+						}
+						document.getElementById("download").innerHTML=txt;
+					}
+					
+				 </script>
+				</div>
+				</div>
+			</div>
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

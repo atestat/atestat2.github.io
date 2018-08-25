@@ -1,0 +1,166 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Cautarea Binara
+			</div>
+			<div id="lectie">
+				
+				Căutarea binară (Binary Search) este un algoritm care caută poziţia unei valori într-o colecţie de date, sau vector, sortată. La fiecare pas, algoritmul compară valoarea căutată cu valoarea din mijlocul vectorului. Dacă se potrivesc atunci indicele sau poziţia valorii în vector este returnată. În caz contrar se caută în subvectorul din stânga valorii din mijloc, dacă valoarea căutată este mai mică decât cea din mijloc, sau în subvectorul din dreapta, dacă este mai mare. Algoritmul repetă aceiaşi paşi pentru fiecare subvector. Dacă nu se găseşte valoarea se va returna valoarea -1. 
+Complexitatea algoritmului este O(log n) (logaritmic) deoarece la fiecare pas vectorul este înjumătăţit.
+				
+				<div id="subtitlu">
+					Implementare în C++
+				</div>
+				
+				<div id="cod">
+				<pre>
+// *** Binary Search *** //
+// d (dreapta) - limita inferioara 
+// s (stanga) - limita superioara
+int cauta(int d, int s, int key, int * v)
+{
+    if(s < d) return -1; // Nu s-a gasit nicio valoare
+    int m = (d + s) / 2; // Elementul din mijloc
+    if(key < v[m]) return cauta(d, m-1, key, v); // Cauta in subvectorul din stanga
+    else if(key > v[m]) return cauta(m+1, s, key, v); // Cauta in subvectorul din dreapta
+    else return m; // Gasit!
+}
+				</pre>
+				</div>
+				
+				Exemplu:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+// *** Binary Search *** //
+// d (dreapta) - limita inferioara 
+// s (stanga) - limita superioara
+int cauta(int d, int s, int key, int * v)
+{
+    if(s < d) return -1; // Nu s-a gasit nicio valoare
+    int m = (d + s) / 2; // Elementul din mijloc
+    if(key < v[m]) return cauta(d, m-1, key, v); // Cauta in subvectorul din stanga
+    else if(key > v[m]) return cauta(m+1, s, key, v); // Cauta in subvectorul din dreapta
+    else return m; // Gasit!
+}
+
+int main()
+{
+    int iteme[] = {2, 9, 11, 15, 28, 33, 40, 47, 51, 64, 76, 77, 82, 85, 94}; // 15 elemente
+    int indice = cauta(0, 14, 76, iteme);
+    cout << indice; // 10; iteme[10] == 76;
+    
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+			</div>	
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

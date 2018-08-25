@@ -1,0 +1,274 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Input / Output cu CIN si COUT
+			</div>
+			<div id="lectie">
+				<div id="subtitlu">
+					OUTPUT CU COUT
+				</div>
+				
+				Am văzut că pentru a putea folosi obiectele cout (console output) şi cin avem nevoie de biblioteca (library) iostream. Ca să putem folosi această bibliotecă trebuie să includem următoarele linii la începutul programului:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+				</pre>
+				</div>
+				
+				Afişarea numerelor sau stringurilor pe ecran (consolă) se face cu obiectul cout şi operatorul de inserţie <<. De exemplu:
+				
+				<div id="cod">
+				<pre>
+cout << "Quick wafting zephyrs vex bold Jim\n"
+     << "The five boxing wizards jump quickly.\n";
+				</pre>
+				</div>
+				
+				cout afişează datele aşa cum le daţi. cout nu formatează nimic, nu adaugă spaţii între cuvinte, nu adaugă new line, etc. Exemplu:
+				
+				<div id="cod">
+				<pre>
+cout << "Quick" << "wafting" << "zephyrs";
+				</pre>
+				</div>
+				
+				Se va afişa:
+				
+				<div id="cod">
+				<pre>
+Quickwaftingzephyrs
+				</pre>
+				</div>
+				
+				Dacă vrem spaţii între cuvinte atunci adăugăm şi spaţii:
+				
+				<div id="cod">
+				<pre>
+cout << "Quick" << " " << "wafting" << " " << "zephyrs";
+				</pre>
+				</div>
+				
+				Lanţul cout poate fi oricât de lung vreţi. Nu e obligatoriu să-l aveţi pe un singur rând (vezi primul exemplu). Trebuie să se termine cu punct şi virgulă.
+Puteţi, de asemenea, să aveţi expresii într-o instrucţiune cout:
+				
+				<div id="cod">
+				<pre>
+cout << "Aria cercului este:" << (PI * raza * raza);
+				</pre>
+				</div>
+				
+				Practic orice obiect care are o reprezentare string poate fi afişat pe ecran cu cout.
+Aţi văzut că un rând nou se inserează cu secvenţa escape '\n'. Ei bine, mai este o metodă cu endl. De exemplu:
+				
+				<div id="cod">
+				<pre>
+cout << "Quick wafting zephyrs vex bold Jim" << endl << "The five boxing wizards jump quickly.\n";
+				</pre>
+				</div>
+				
+				Atunci când vreţi să afişaţi numere double s-ar putea să nu obţineţi ceea ce vreţi.
+				
+				<div id="cod">
+				<pre>
+double phi = 4.893654;
+cout << phi;
+				</pre>
+				</div>
+				
+				Se va afişa 4.893654. Dar poate vreţi să afişaţi doar primele două zecimale. Cum faceţi asta? Cu următoarele instrucţiuni:
+				
+				<div id="cod">
+				<pre>
+cout.setf(ios::fixed);
+cout.setf(ios::showpoint);
+cout.precision(2);
+				</pre>
+				</div>
+				
+				Prima instrucţiune ne permite să folosim funcţia precision doar pentru partea fracţionară (de după punct); altfel ar fi luat în considerare tot numărul. 
+A doua instrucţiune afişează punctul zecimal de fiecare dată - chiar şi pentru numere întregi. 
+A treia instrucţiune setează precizia numărului la 2 zecimale. Se fac rotunjiri! Argumentul funcţiei trebuie să fie pozitiv şi număr întreg sau o expresie evaluată la int. 
+După aceste instrucţiuni puteţi folosi cout normal ca să afişaţi numerele reale în noul format:
+				
+				<div id="cod">
+				<pre>
+cout << phi; // 4.89
+				</pre>
+				</div>
+				
+				Puteţi folosi opţiunea ios::scientific ca să afişaţi în notaţie ştiinţifică:
+				
+				<div id="cod">
+				<pre>
+double phi = 0.0000123;
+cout.setf(ios::scientific);
+cout.setf(ios::showpoint);
+cout.precision(2);
+cout << phi; // 1.23e-005
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					INPUT CU CIN
+				</div>
+				
+				Similar putem folosi cin (console input) pentru operaţii de input, adică de obţinere a datelor de la tastatură (de la user). Se foloseşte cu operatorul de extracţie >>.
+				
+				<div id="cod">
+				<pre>
+int a, b;
+cout << "Introduceti doua numere: ";
+cin >> a >> b; 
+cout << "Suma lor este: " << (a + b);
+				</pre>
+				</div>
+				
+				Atunci când întâlneşte instrucţiunea cin, programul aşteaptă inputul de la user. Atribuie prima valoare primei variabile, a doua valoare variabilei a doua, etc. 
+Programul nu citeşte datele de intrare decât după ce utilizatorul apasă ENTER la tastatură. În acest fel userul se poate corecta folosind backspace. 
+Obiectul cin foloseşte spaţiile albe (space, enter, tab, etc.) ca delimitatoare. Asta înseamnă că datele de intrare trebuie despărţite prin câte un spaţiu sau rând nou (new line). 
+cin ignoră - şi elimină din fluxul (stream) de intrare - toate spaţiile albe până întâlneşte un input valid. 
+Deoarece ignoră spaţiile albe, nu puteţi citi propoziţii de cuvinte cu cin. Trebuie să folosiţi funcţia getline (care citeşte până când întâlneşte un caracter new line pe care îl extrage din stream şi-l ignoră). Se foloseşte cu tipul string:
+				
+				<div id="cod">
+				<pre>
+string fullname;
+getline(cin, fullname);
+cout << "\nNumele tau este: \n" 
+     << fullname << endl;
+				</pre>
+				</div>
+				
+				Primul parametru trebuie să fie cin pentru că citiţi de la tastatură. 
+Al doilea parametru este o variabilă string în care va fi salvat şirul. 
+Streamul (fluxul) de intrare (input stream) reprezintă şirul datelor de intrare. Imaginaţi-vă un flux de informaţii care curge către calculator. Aceste date vin nu numai de la tastatură, ci şi de la alte dispozitive de intrare: mouse, scanner, mircofon, etc. 
+cin se ocupă numai de tastatură. 
+Similar, cout scrie în streamul de ieşire (output stream) care este afişat pe ecran. 
+Exemplu: Se citesc de la tastatură trei numere naturale. Să se afişeze suma lor. 
+Pentru datele de intrare: 14 89 99 se va afişa 202.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << a + b + c;  // parantezele pot lipsi
+
+    system("PAUSE"); 
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Cu cin puteţi citi numere întregi şi reale, stringuri şi caractere, etc.
+				
+			</div>	
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

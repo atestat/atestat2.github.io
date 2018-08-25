@@ -1,0 +1,398 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Lista Circulara Simplu Inlantuita
+			</div>
+			<div id="lectie">
+				
+				Lista Circulară Simplu Înlănţuită este aproape similară cu Lista Liniară Simplu Înlănţuită. Diferenţele sunt următoarele: nodul tail (ultim) este legat de nodul head (prim), în acest caz lista nu mai are început sau sfârşit. Vedeţi tutorialul despre listele simplu înlănţuite înainte de a-l citi pe acesta. Mai jos este o imagine ce ilustrează conceptul de listă circulară simplu înlănţuită (LCÎ):
+				
+				<div id="subtitlu">
+					Adăugarea unui nod la listă
+				</div>
+				
+				Algoritmii sunt aceeiaşi singura diferenţa fiind că ultimul nod va fi legat de primul nod. Mai jos voi implementa algoritmul de eliminare al ultimului nod:
+				
+				<div id="cod">
+				<pre>
+void ListaC::push_back(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = head; // Fiind singurul nod, urmatorul este head
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->next = head;  // Ultimul nod va fi mereu legat de primul
+        tail->next = nod;    // Fostul tail este legat de noul tail
+        tail = nod;          // nod devine tail
+    }
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Parcurgerea listei
+				</div>
+				
+				Lista va fi parcursă tot cu Iterator, dar de data aceasta avem nevoie de un nod care să termine lista sau, mai bine zis, parcurgerea. Vom considera nodul head ca nod terminator. Acesta este algoritmul general: Mai întâi prelucrăm nodul prim, apoi prelucrăm toate celelalte noduri până când ajungem din nou la prim (head).
+				
+				<div id="cod">
+				<pre>
+ListaC mylist;
+// Mai intai se prelucreaza nodul prim
+// *mylist.front()
+// Se prelucreaza celelalte noduri
+for(ListaC::Iterator it = ++mylist.front(); it != mylist.front(); it++)
+{
+ // Se prelucreaza *it
+}
+				</pre>
+				</div>
+				
+				Nu uitaţi că front() returnează un Iterator.
+				
+				<div id="subtitlu">
+					Eliminarea unui nod din listă
+				</div>
+				
+				Vom elimina de fapt nodul următor nodului curent q. Trebuie să verificăm dacă succesorul lui q nu este cumva nodul head, caz în care actualizăm nodul head. Voi folosi funcţia searchPrevious() pentru a obţine un iterator către nodul precedent nodului pe care vreau să-l şterg.
+				
+				<div id="cod">
+				<pre>
+void ListaC::remove(Iterator nod)
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    Nod * temp = nod.list->next;
+    nod.list->next = nod.list->next->next;
+    if(temp == head) head = head->next;
+    delete temp;
+}
+				</pre>
+				</div>
+				
+				Funcţia searchPrevious():
+				
+				<div id="cod">
+				<pre>
+ListaC::Iterator ListaC::searchPrevious(int value) const
+{
+    if(head->next->data == value) return front();
+    for(Nod* it = head->next; it != head; it = it->next)
+    {
+        if(it->next->data == value) return Iterator(it); // Daca am gasit nodul il returnez
+    }
+    return Iterator(nullptr); // Nu am gasit nimic
+}
+				</pre>
+				</div>
+				
+				În final, iată clasa ListaC:
+				
+				<div id="cod">
+				<pre>
+class ListaC
+{
+public:
+    struct Iterator; // Declaratie forward
+    // Constructor - Initializarea listei
+    ListaC() { head = tail = nullptr; /*Se creeaza lista vida*/ }
+    // Destructor - Distrugerea listei
+    ~ListaC() { if(!isEmpty()) clear(); }  
+    void push_front(int elem); // Inserare in fata primului nod
+    void push_back(int elem);  // Inserare dupa ultimul nod
+    Iterator search(int value) const; // Cauta value in lista
+    Iterator searchPrevious(int value) const; // Cauta predecesorul lui value
+    void pop_front(); // Elimina nodul din fata
+    void remove(Iterator nod); // Elimina nodul nod
+    // Returneaza un iterator catre inceputul listei
+    Iterator front() const { return Iterator(head); } 
+    // Returneaza un iterator catre nodul tail
+    Iterator back() const { return Iterator(tail); }
+    bool isEmpty() const { return head == nullptr; } // Este lista vida?
+    void clear(); // Stergerea completa a listei
+
+private:
+    struct Nod  // Clasa Helper; Implementeaza un nod de lista
+    {
+    int data;   // informatia propriu-zisa
+    Nod * next; // urm
+    };
+    Nod * head; // prim
+    Nod * tail; // ultim
+public:
+    struct Iterator // Un pointer inteligent
+    {
+        friend class ListaC; // Lista are acces la membrii privati ai lui Iterator
+        Iterator() { list = nullptr; }
+        Iterator(Nod * ls) { list = ls; }
+        // Supraincarc operatorul * (dereferentiere)
+        int& operator*() 
+		{ if(list != nullptr) return list->data; else throw "Null iterator!"; }
+        // Prefix - Trec la urmatorul nod
+        Iterator& operator++() { list = list->next; return *this; }  
+        // Postfix
+        Iterator operator++(int) { Iterator temp = *this; ++(*this); return temp; }
+        bool operator==(const Iterator& it) 
+		const { if(it.list == this->list) return true; else return false; }
+        bool operator!=(const Iterator& it) 
+		const { if(!(it == *this)) return true; else return false; }
+    private:
+        Nod * list;
+    };
+};
+
+void ListaC::push_front(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = head; // Fiind singurul nod, urmatorul este head
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->next = head;    // Leg nod de head
+        head = nod;          // nod devine noul head
+        tail->next = head;   // Actualizez legatura lui tail
+    }
+}
+
+void ListaC::push_back(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = head; // Fiind singurul nod, urmatorul este NIMIC adica NULL
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->next = head;  // Ultimul nod va fi mereu legat de primul
+        tail->next = nod;    // Fostul tail este legat de noul tail
+        tail = nod;          // nod devine tail
+    }
+}
+
+ListaC::Iterator ListaC::search(int value) const
+{
+    if(head->data == value) return front();
+    for(Nod* it = head->next; it != head; it = it->next)
+    {
+        if(it->data == value) return Iterator(it); // Daca am gasit nodul il returnez
+    }
+    return Iterator(nullptr); // Nu am gasit nimic
+}
+
+void ListaC::pop_front()
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    Nod * temp = head; // Salvez adresa obiectului head
+    head = head->next; // Succesorul lui head devine noul head
+    tail->next = head; // Actualizez legatura lui tail
+    delete temp; // Eliberez memoria ocupata de vechiul obiect head
+}
+
+void ListaC::remove(Iterator nod)
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    Nod * temp = nod.list->next;
+    nod.list->next = nod.list->next->next;
+    if(temp == head) head = head->next;
+    delete temp;
+}
+
+void ListaC::clear()
+{
+    Nod *it = head, *temp; 
+    while(it != nullptr)
+    {
+        temp = it; // Salvez adresa nodului curent
+        it = it->next; // Trec mai departe
+        delete temp; // Distrug nodul curent
+    }
+    head = tail = nullptr; // Lista Vida
+}
+
+ListaC::Iterator ListaC::searchPrevious(int value) const
+{
+    if(head->next->data == value) return front();
+    for(Nod* it = head->next; it != head; it = it->next)
+    {
+        if(it->next->data == value) return Iterator(it); // Daca am gasit nodul il returnez
+    }
+    return Iterator(nullptr); // Nu am gasit nimic
+}
+				</pre>
+				</div>
+				
+				Iată un exemplu cu lista circulară simplu înlănţuită:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include "ListaC.h"
+using namespace std;
+
+int main()
+{
+    ListaC mylist;
+    mylist.push_back(3);
+    mylist.push_back(12);
+    mylist.push_front(18);
+    mylist.push_front(56);
+ 
+    cout << *mylist.front() << ' ';
+    for(ListaC::Iterator it = ++mylist.front(); it != mylist.front(); it++)
+    cout << *it << ' ';
+    cout << '\n';
+
+    ListaC::Iterator p = mylist.searchPrevious(18);
+    mylist.remove(p);
+    mylist.pop_front();
+
+    cout << *mylist.front() << ' ';
+    for(ListaC::Iterator it = ++mylist.front(); it != mylist.front(); it++)
+    cout << *it << ' ';
+    cout << '\n';
+
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+56 18 3 12
+3 12
+				</pre>
+				</div>
+				
+			</div>		
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

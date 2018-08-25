@@ -1,0 +1,449 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Coada (Queue)
+			</div>
+			<div id="lectie">
+				
+				Coada (Queue) este un container (la fel ca şi Stiva) bazat pe principiul first-in first-out (FIFO). Adică elementele pot fi adăugate în coadă în orice moment, dar numai cel mai vechi (cel de la bază) element poate fi eliminat în orice moment (se extrage cea mai veche informaţie adăugată). Mai simplu, elementele sunt adăugate în spate şi eliminate din faţă. Intraţi pe http://courses.cs.vt.edu/csonline/DataStructures/Lessons/QueuesImplementationView/applet.html sau http://www.concentric.net/~ttwang/java/QueueDemo.html (aveţi nevoie de Java) pentru a înţelege mai bine. Folosiţi Enqueue pentru a adăuga obiecte şi Dequeue pentru a elimina obiectul din faţă (front). Acum că aveţi o idee despre cozi, să trecem la operaţiile pe care coada le implementează. Coada este o structură de date care suportă următoarele operaţii:
+				
+				<ol>
+					
+					<li>enqueue(ob): adaugă un obiect la sârşitul cozii (baza).</li>
+					<li>dequeue(): elimină obiectul din faţa cozii (cap).</li>
+					<li>front(): returnează o referinţă către cap fără a elimina obiectul.</li>
+					<li>back(): returnează o referinţă către baza fără a elimina obiectul.</li>
+					<li>size(): returnează numărul obiectelor din coadă.</li>
+					<li>isEmpty(): returnează true dacă coada este vidă, altfel false.</li>
+					
+				</ol>
+				
+				Deoarece am zis că coada este un container de obiecte, acest lucru înseamnă că ar trebui să pot declara cozi de orice tip: int, char, bool, etc. sau un tip definit de utilizator. Deci voi implementa o clasă generică Coada, cu parametrul generic T.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt;
+class Coada
+{
+public:
+    Coada(); // Constructor
+    ~Coada(); // Destructor
+    void enqueue(const T& ob); // Adaug un element in coada
+    void dequeue(); // Elimin obiectul din fata
+    const T& front() const; // Returnez o referinta catre cap
+    const T& back() const; // Returnez o referinta catre baza
+    int size() const; // Returnez numarul de elemente
+    bool isEmpty() const; // Este coada vida?
+private:
+    struct Element
+    {
+        T data;
+        Element * next;
+    };
+    Element * cap;
+    Element * baza;
+    int count; // Numar elementele
+};
+				</pre>
+				</div>
+				
+				Observaţi că la unele funcţii apare referinţa constantă. De ce fac asta? De ce nu returnez pur şi simplu un obiect T şi nu o referinţă? Datorită eficienţei. Atunci când returnez o referinţă nu se mai alocă, temporar (deci va fi dealocat; un overhead suplimentar), spaţiu pentru obiectul returnat sau pentru parametrul formal, deoarece pot accesa direct variabila referită. Referinţa este constantă tocmai pentru că nu vreau să modific din greşeală argumentul sau obiectul returnat, plus că nu aş putea transmite valori concrete (de ex: 1, 2, 'c', 4.6, etc.) funcţiei enqueue(), dacă referinţa nu ar fi constantă.
+				
+				<div id="subtitlu">
+					Iniţializarea Cozii
+				</div>
+				
+				Iniţializarea cozii presupune crearea cozii vide, adică elementele cap şi baza indică NULL (nullptr). Pentru cei care folosiţi compilatoare noi, cum ar fi cel din Visual Studio, folosiţi nullptr în loc de NULL, deoarece NULL este doar un simplu macro, este 0, este un întreg şi nu reprezintă concret o adresă inexistentă. Coada este iniţializată în constructor:
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; Coada&lt;T&gt;::Coada()
+{
+    cap = baza = nullptr; // coada vida
+    count = 0; // niciun element
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Coada Vidă
+				</div>
+				
+				Coada este vidă atunci când cap este NULL, deci algoritmul va fi următorul:
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; bool Coada&lt;T&gt;::isEmpty() const
+{
+    return cap == nullptr;
+}
+				</pre>
+				</div>
+				
+				Calificatorul const informează compilatorul că respectiva funcţie nu modifcă obiectele stivei, nu le modifica datele membre.
+				
+				<div id="subtitlu">
+					Numărul de elemente dintr-o Coadă
+				</div>
+				
+				Pur şi simplu returnăm valoarea membrului count.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; int Coada&lt;T&gt;::size() const
+{
+    return count;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Adăugarea unui element în Coadă
+				</div>
+				
+				Algoritmul este simplu. Aloc memorie pentru un obiect de tip Element -> Scriu informaţia în obiect -> Succesorul acestui obiect este baza -> Noul element devine baza. Se incrementează count. Funcţia enqueue() va implementa această operaţie.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; void Coada&lt;T&gt;::enqueue(const T& ob)
+{
+    if(isEmpty()) // Daca coada este vida
+    {
+        cap = new Element;
+        cap->data = ob;
+        cap->next = nullptr; // Fiind singurul element, succesorul este NULL
+        baza = cap;
+        count = 1;
+    }
+    else
+    {
+        Element * p = new Element;
+        p->data = ob;
+        p->next = nullptr; // Devine noul element baza
+        baza->next = p; // Fosta baza se leaga de noua baza
+        baza = p; // p devine baza
+        ++count;  // S-a mai adaugat un element
+    }
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Eliminarea unui element din Coadă
+				</div>
+				
+				Se poate elimina numai elementul din faţă. Se salvează adresa capului -> Elementul următor devine cap -> Se eliberează memoria fostului cap. Se decrementează count. Funcţia dequeue() va implementa această operaţie.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; void Coada&lt;T&gt;::dequeue()
+{
+    if(isEmpty()) throw "Eroare! Coada Vida!";
+    Element * q = cap; // Salvez elementul din cap
+    cap = cap->next; // Elementul urmator devine cap
+    delete q;
+    --count;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Obţinerea elementului din capul Cozii
+				</div>
+				
+				Se returnează o referinţă constantă către cap->data.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; const T& Coada&lt;T&gt;::front() const
+{
+    if(isEmpty()) throw "Eroare! Coada Vida!";
+    return cap->data;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Obţinerea elementului din baza Cozii
+				</div>
+				
+				Se returnează o referinţă constantă către baza->data.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; const T& Coada&lt;T&gt;::back() const
+{
+    if(isEmpty()) throw "Eroare! Coada Vida!";
+    return baza->data;
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Eliberarea spaţiului de memorie ocupat de Coadă
+				</div>
+				
+				Se distruge pe rând fiecare element al cozii. De asta se va ocupa destructorul clasei.
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; Coada&lt;T&gt;~Coada()
+{
+    while(cap != nullptr)
+    {
+        Element * q = cap;
+        cap = cap->next;
+        delete q;
+    }
+}
+				</pre>
+				</div>
+				
+				Dacă aveţi probleme cu nullptr, atunci folosiţi NULL. De asemenea vă recomand să folosiţi Visual Studio.
+În continuare vă propun să creaţi un nou fişier Coada.h (header) şi să-l adăugaţi la proiectul vostru, după care în fişierul main (unde aveţi funcţia main) să adăugaţi, la început, directiva: #include "Coada.h". Adăugaţi următorul cod în Coada.h:
+				
+				<div id="cod">
+				<pre>
+template &lt;typename T&gt; class Coada
+{
+public:
+    Coada() { // Constructor
+        cap = baza = nullptr; // coada vida
+        count = 0; // niciun element
+    }
+    ~Coada(); // Destructor
+    void enqueue(const T& ob); // Adaug un element in coada
+    void dequeue(); // Elimin obiectul din fata
+    const T& front() const { // Returnez o referinta catre cap
+        if(isEmpty()) throw "Eroare! Coada Vida!";
+        return cap->data;
+    }
+    const T& back() const { // Returnez o referinta catre baza
+        if(isEmpty()) throw "Eroare! Coada Vida!";
+        return baza->data;
+    }
+    int size() const { return count; } // Returnez numarul de elemente
+    bool isEmpty() const { return cap == nullptr; } // Este coada vida?
+private:
+    struct Element
+    {
+        T data;
+        Element * next;
+    };
+    Element * cap;
+    Element * baza;
+    int count; // Numar elementele
+};
+
+template&lt;typename T&gt; Coada&lt;T&gt;::~Coada()
+{
+    while(cap != nullptr)
+    {
+        Element * q = cap;
+        cap = cap->next;
+        delete q;
+    }
+}
+
+template&lt;typename T&gt; void Coada&lt;T&gt;::enqueue(const T& ob)
+{
+    if(isEmpty()) // Daca coada este vida
+    {
+        cap = new Element;
+        cap->data = ob;
+        cap->next = nullptr; // Fiind singurul element, succesorul este NULL
+        baza = cap;
+        count = 1;
+    }
+    else
+    {
+        Element * p = new Element;
+        p->data = ob;
+        p->next = nullptr; // Devine noul element baza
+        baza->next = p; // Fosta baza se leaga de noua baza
+        baza = p; // p devine baza
+        ++count;  // S-a mai adaugat un element
+    }
+}
+
+template&lt;typename T&gt; void Coada&lt;T&gt;::dequeue()
+{
+    if(isEmpty()) throw "Eroare! Coada Vida!";
+    Element * q = cap; // Salvez elementul din cap
+    cap = cap->next; // Elementul urmator devine cap
+    delete q;
+    --count;
+}
+				</pre>
+				</div>
+				
+				PROBLEMĂ: Într-o coadă sunt memorate numere din intervalul \([1, 10]\). Să se elimine numerele pare.
+Deoarece numai informaţia din cap poate fi extrasă, pentru a ajunge la un anumit element trebuie eliminate toate elementele până la acel element. În acest caz, pentru a nu pierde informaţia din celelalte elemente (aici, numerele impare), voi descărca elementele impare într-o coadă de rezervă (temp), iar după ce voi scăpa de numerele pare, voi încărca numerele impare din coada de rezervă înapoi în coada iniţială.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include "Coada.h"
+using namespace std;
+
+int main()
+{
+    Coada<int> qu, temp; 
+
+    for(int i = 1; i <= 10; i++) // Adaug 10 numere [1, 10]
+        qu.enqueue(i);
+
+    while(!qu.isEmpty()) // Cat timp coada nu este vida
+    {
+        if(qu.front() % 2 == 0)
+            qu.dequeue(); // Daca este par, il elimin
+        else
+        {
+            temp.enqueue(qu.front()); // Salvez numarul impar
+            qu.dequeue();
+        }
+    }
+
+    // Incarc numerele impare inapoi in coada qu
+    while(!temp.isEmpty())
+    {
+        qu.enqueue(temp.front());
+        temp.dequeue();
+    }
+
+    // Afisez rezultatul
+    while (!qu.isEmpty())
+    {
+        cout << qu.front() << ' ';
+        qu.dequeue();
+    }
+
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+1 3 5 7 9
+				</pre>
+				</div>
+				
+				Trebuie să ştiţi că Standard Template Library (STL) implementează o structură de tip coadă în clasa queue, ce se găseşte în headerul queue. Are aceeiaşi membri (isEmpty() este empty(), enqueue() este push(), dequeue() este pop()) ca şi clasa definită de mine, singura diferenţa fiind că operaţiile front(), back() şi pop() pentru o coadă vidă sunt nedefinite, adică nu se generează o excepţie (aşa cum am făcut eu). Deci este responsabilitatea programatorului pentru a se asigura că nu aplică acele operaţii pe o coadă vidă.
+				
+				<div id="cod">
+				<pre>
+#include &lt;queue&gt;
+using std::queue; 
+queue&lt;float&gt; myQueue;
+				</pre>
+				</div>
+				
+			</div>	
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

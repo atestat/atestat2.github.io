@@ -1,0 +1,410 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Booleeni si Structuri de Control
+			</div>
+			<div id="lectie">
+				
+				<div id="subtitlu">
+					TIPUL BOOLEAN
+				</div>
+				
+				Tipul boolean sau tipul de dată logic este tipul ce are două valori: true şi false. 
+Acest tip este folosit în contextele booleene, acolo unde expresia este evaluată* la true sau false. De exemplu, în condiţia de la if sau while. 
+O variabilă de tip bool se declară normal, ca orice variabilă:
+				
+				<div id="cod">
+				<pre>
+bool x = true;
+				</pre>
+				</div>
+				
+				În contextele booleene din C/C++, valorile pozitive sunt evaluate la true, iar ZERO este evaluat la false. 
+De exemplu:
+				
+				<div id="cod">
+				<pre>
+if (1) cout << "TRUE";
+				</pre>
+				</div>
+				
+				Se va afişa mesajul TRUE deoarece 1 este interpretat ca fiind true.
+Operatorii care returnează un rezultat booleean sunt operatorii relaţionali şi operatorii logici.
+Operatorii relaţionali sunt:
+				
+				<div id="cod">
+				<pre>
+< // Mai mic
+<= // Mai mic sau egal
+== // Egal
+!= // Diferit
+> // Mai mare
+>= // Mai mare sau eagl
+				</pre>
+				</div>
+				
+				În general sunt folosiţi cu numere (întregi, reali), dar veţi vedea că pot fi definiţi şi pentru alte tipuri. 
+Opeatorii logici sunt:
+				
+				<div id="cod">
+				<pre>
+&& // AND - SI LOGIC
+|| // OR - SAU LOGIC
+! // NOT - NEGATIE LOGICA
+				</pre>
+				</div>
+				
+				Operatorul AND returnează true dacă ambii operanzi sunt true. 
+Operatorul OR returnează true dacă cel puţin unul dintre operanzi este true.
+Operatorul NOT inversează valoarea booleană a expresiei, variabilei, etc.
+C++ foloseşte evaluarea scurtă.
+Pentru AND: Dacă primul operand este false atunci întreaga expresie este false; nu se mai evaluează operandul al doilea. 
+Pentru OR: Dacă primul operand este true atunci întreaga expresie este true; nu se mai evaluează operandul al doilea. 
+Dintre aceşti operatori, NOT are prioritatea cea mai mare, urmat de operatorii relaţionali, apoi (în această ordine) AND şi OR.
+				
+				<div id="subtitlu">
+					STRUCTURI DECIZIONALE
+				</div>
+				
+				Instrucţiunea if permite execuţia unei porţiuni de cod* doar dacă o anumită condiţie este îndeplinită. Condiţia este dată de programator. 
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a = 4;
+    if (a >= 4) {
+        cout << "Hi!";
+    } else {
+        cout << "Bye!";
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Se va afişa if deoarece variabila a memorează 4, iar 4 este mai mare sau egal cu 4. 
+Ramura else este executată atunci când condiţia de la if nu este îndeplinită. Dacă if se execută atunci programul ignoră ramura else. 
+În cazul unei singure instrucţiuni (valabil pentru toate structurile de control) acoladele pot lipsi. 
+După else poate urma un alt if, şi un altul, până când cascada de if else se termină în else sau nu se termină în nimic, deoarece else este opţional.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    double nr;
+    cin >> nr;
+    if (nr >= 2) {
+        cout << "Ai introdus un numar mai mare sau egal cu 2.";
+    } else if (nr < 0) {
+        cout << "Ai introdus un numar negativ";
+    } else {
+        cout << "Ai introdus un numar din intervalul [0, 2)";
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Aici, ultimul else este executat numai dacă ramurile superioare nu sunt executate. 
+Condiţia de la if (ca şi la celelalte structuri) poate fi orice: constantă, variabile, expresie, orice se poate evalua la true sau false.
+Mod de funcţionare if:
+		
+				<ol>
+				
+					<li>  Se evaluează condiţia. Dacă este true se trece la pasul următor; dacă este false se trece la pasul 3.</li>
+					<li>  Se execută codul din blocul if (dintre acolade) şi se trece la pasul 4.</li>
+					<li>  Se execută ramura else şi se trece la pasul 4.</li>
+					<li>  Se iese din if şi se continuă execuţia programului.</li>
+				
+				</ol>
+				
+				Instrucţiunea switch este, într-un fel, similară cu if. Permite execuţia anumitor instrucţiuni în funcţie de rezultatul unei expresii, variabile, etc.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int nr;
+    cin >> nr;
+    switch(nr)
+    {
+        case 1: cout << "Ai introdus 1"; break;
+        case 2: cout << "Ai introdus 2"; break;
+        default: cout << "Ai introdus un numar diferit de 1 si 2"; break;
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Instrucţiunea switch compară rezultatul expresiei dintre paranteze (aici este variabila nr) cu fiecare caz şi-l execută atunci când găseşte o potrivire. 
+Expresiile de la case trebuie să fie constante. 
+Fără break, switch ar evalua în continuare celelalte cazuri chiar dacă l-ar găsi pe cel potrivit. 
+Omiterea instrucţiunii break nu generează o eroare, deoarece este opţional. 
+Ultimul caz, default (implicit), se execută atunci când nu există potriviri cu celelalte cazuri.
+Un exemplu care arată cum puteţi valorifica lipsa break-ului:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int nr;
+    cin >> nr;
+    switch(nr)
+    {
+        case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+            cout << "Ai introdus ziua a " << nr << "-a"; break;
+        default:
+            cout << "Te rog sa introduci numarul valid al unei zile";
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Să zicem că nr este 2. Se execută cazul 2, apoi, deoarece nu există break, se trece la 3, apoi la 4, ... până la 7 unde există break şi se iese din switch.
+				
+				<div id="subtitlu">
+					STRUCTURI ITERATIVE - BUCLE - LOOP-URI
+				</div>
+				
+				Instrucţiunea while repetă o porţiune de cod până când condiţia devine falsă. Dacă condiţia nu devine falsă la un moment dat, while va continua să ruleze (până când programul este oprit forţat de programator / user).
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int nr;
+    cout << "Ca sa inchizi programul scrie 0.\n";
+    cin >> nr;
+    while (nr != 0) { // Cat timp nr nu este 0
+        cout << nr * 2 << '\n';
+        cin >> nr;
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Condiţia de la while, în acest exemplu, este nr != 0. 
+Atunci când folosim loopuri trebuie să ne asigurăm că aceste condiţii vor deveni false în cele din urmă, ca să evităm repetiţiile infinite. 
+În exemplul meu, decizia de a opri programul (care în fond înseamnă oprirea iteraţiei) îi aparţine utilizatorului, prin acel cin >> nr; din while. 
+Mod de funcţionare while:
+				
+				<ol>
+				
+					<li>  Se evaluează condiţia. Dacă este true se trece la pasul următor. Dacă este false se trece la pasul 4.</li>
+					<li>  Se execută codul din blocul while (dintre acolade).</li>
+					<li>  Se trece la pasul 1.</li>
+					<li>  Se iese din while şi se continuă execuţia programului.</li>
+				
+				</ol>
+				
+				O variaţie a structurii while este do { } while(conditie); Spre deosebire de while, codul în do while este executat cel puţin o dată indiferent de condiţie.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    bool conditie = false;
+    do {
+        cout << "In while :)";
+    } while (conditie);
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Se va afişa In while :) deoarece evaluarea se face la final.
+Observaţi ; după while. Este obligatoriu.
+Instrucţiunea for repetă de un anumit număr de ori o porţiune de cod.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    for (int i = 1; i <= 10; i++) {
+        cout << i << ' ';
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Se va afişa: 1 2 3 4 5 6 7 8 9 10. 
+				
+				<div id="cod">
+				<pre>
+for (initializare; conditie; incrementare)
+				</pre>
+				</div>
+				
+				Instrucţiunea for are trei părţi:
+				
+				<ol>
+				
+					<li>La iniţializare se declară (şi se iniţializează) variabila (sau variabilele) contor (folosită la numărat).</li>
+					<li>La conditie avem o expresie de terminare a iteraţiei.</li>
+					<li>La incrementare (sau decrementare) variabila contor este modificată astfel încât condiţia să poată deveni la un moment dat falsă.</li>
+				
+				</ol>
+				
+				Toate cele trei părţi sunt opţionale. Nu este obligatoriu să declaraţi variabila contor în for, deşi dacă o declaraţi acolo, ea va fi vizibilă numai în blocul for.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    for (int i = 10; i > 0; i-=2) {
+        cout << i << ' ';
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Se va afişa: 10 8 6 4 2. Mod de funcţionare:
+				
+				<ol>
+				
+					<li>Se iniţializează variabilele (Această parte se execută o singură dată).</li>
+					<li>Se evaluează condiţia. Dacă este true se trece pasul următor. Dacă este false se trece la pasul 5.</li>
+					<li>Se execută codul din blocul for.</li>
+					<li>Se execută instrucţiunea de la incrementare.</li>
+					<li>Se iese din for şi se continuă execuţia programului.</li>
+				
+				</ol>
+				
+				Prin cod se înţelege o instrucţiune sau grup de instrucţiuni.
+A evalua este echivalent cu a executa.
+				
+			</div>
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

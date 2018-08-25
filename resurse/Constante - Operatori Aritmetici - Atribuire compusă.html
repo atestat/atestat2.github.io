@@ -1,0 +1,325 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Constante - Operatori Aritmetici - Atribuire compusa
+			</div>
+			<div id="lectie">
+			
+				<div id="subtitlu">
+					CONSTANTE
+				</div>
+			
+				O constantă, sau constantă literală, este o reprezentare a unei valori fixe în program. O parte din constante le-aţi folosit în tutorialul anterior la iniţializarea variabilelor. 
+Constantele de tip int sunt numere întregi: 45, -123, 0, 8965 etc. 
+Constantele de tip double (floating-point - virgulă mobilă) sunt numere reale: 3.14, 1.6867, 0.0001, 7.0 etc. Numerele reale mai pot fi exprimate şi prin notaţia ştiinţifică. 
+De exemplu, numărul 1.5 * 104 poate fi reprezentat în C++ prin constanta 1.5e4, unde e înseamnă 10 la puterea. 
+Numărul de după e reprezintă exponentul şi, deci, nu poate conţine punct zecimal. Poate fi negativ.
+			
+				<pre> </pre>
+				
+				Atenţie! În C++ numerele fracţionare nu pot conţine virgulă, ci doar punct zecimal. 
+Constantele de tip caracter (char) sunt de forma: 'caracter', unde caracter reprezintă un singur caracter ASCII. 
+				
+				<pre> </pre>
+				
+				De exemplu, 'a', 'x', 'G', 'P'. Caracterele se pun întotdeauna între două apostrofuri. 
+Stringurile, şirurile de caractere, se pun între ghilimele. Exemplu: "Sunt un string.". 
+
+				<pre> </pre>
+				
+				Atenţie! Simbolul "B" este un string, nu un caracter de tip char. Următoarea atribuire este ilegală: char s = "F"; // Gresit.
+Secvenţele formate din backslash \ şi un singur caracter se numesc secvenţe escape. Sunt folosite pentru a exprima caracterele imposibil de reprezentat printr-un singur simbol. Acestea sunt cele mai folosite şi utile secvenţe escape:
+
+				<pre>
+
+Secvenţă escape	  Semnificaţie
+\n		Rând nou - new line
+\t		Tab orizontal
+\\		Backslash
+\'		Apostrof
+\"		Ghilimele
+\a		Alertă (Sunet)
+				</pre>
+				
+				Secvenţele escape sunt tratate ca un singur caracter (deşi au două), deci se pun între apostrofuri. Pot fi incluse în stringuri. 
+De exemplu, următoarea secvenţă de cod afişează textul pe două rânduri:
+
+				<div id="cod">
+				<pre>
+cout << "Acesta este\n" << "un exemplu.";
+				</pre>
+				</div>
+				
+				Stringurile sunt memorate fie în vectori de caractere, fie în obiecte de tip string (aceste tipuri vor fi prezentate în tutorialele viitoare).
+Constantele booleane sunt true şi false. Reprezintă cele două valori pentru tipul bool.
+C++ ne permite să declarăm variabile constante (constante declarate) cu ajutorul modificatorului const. Exemplu:
+				
+				<div id="cod">
+				<pre>
+const int MAX_PLAYERS = 500;
+const double PI = 3.14159;
+				</pre>
+				</div>
+				
+				După ce au fost definite, aceste constante declarate nu pot fi modificate de nimic în timpul execuţiei programului, nici măcar de o atribuire ulterioară (acest lucru va genera o eroare de compilare).
+Acest mod de a defini constante în program este foarte util. Dacă folosiţi o valoare de mai multe ori în program este bine să-i daţi un nume şi să folosiţi numele în loc de valoarea fixă propriu-zisă. Astfel veţi putea modifica mai uşor valoarea constantei în program. 
+Modificatorul const poate fi folosit cu orice tip. Se numeşte modificator deoarece modifică (restricţionează) variabila declarată. 
+Deşi C++ nu impune acest lucru, prin convenţie constantele declarate se scriu cu litere mari şi cuvintele ce le alcătuiesc se despart prin underscore (_).
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include &lt;string&gt;  // Necesar pentru tipul string
+using namespace std;
+
+int main()
+{
+    const double PI = 3.14159;
+    double raza;
+    string mesaj = "Introduceti raza cercului: ";
+
+    // cin este folosit pentru a obtine date de la user
+    cout << mesaj << '\n'; cin >> raza;
+
+    double aria = PI * raza * raza;
+
+    cout << "Aria cercului este: " << aria;
+    cout << '\n';
+
+    system("PAUSE"); // PAUZA
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Executaţi acest program.
+				
+				<div id="subtitlu">
+					OPERATORII ARITMETICI
+				</div>
+				
+				O expresie este formată din variabile, constante, operatori şi apeluri de funcţii.
+Operatorii aritmetici definiţi în C++ sunt: + (adunare), - (scădere), * (înmuţire), / (împărţire) şi % (modulo).
+Modulo este operaţia prin care se obţine restul împărţirii unui număr la alt număr. Exemplu: 5 % 2 returnează 1.
+Ambii operanzi pentru operatorul % trebuie să fie de tip întreg.
+Tipul rezultatului returnat de operatorii aritmetici depinde de tipul operanzilor. 
+Dacă ambii operanzi sunt de tip int atunci şi rezultatul va fi tot de tip int.
+				
+				<div id="cod">
+				<pre>
+int result = 8 / 5; // 1
+				</pre>
+				</div>
+				
+				Dar dacă unul dintre operanzi este de tip double atunci rezultatul va fi de tip double.
+				
+				<div id="cod">
+				<pre>
+8.0 / 5 // 1.6
+				</pre>
+				</div>
+				
+				Regulile de evaluare sunt ca la matematică. Operatorii de înmulţire şi împărţire au prioritate.
+Puteţi altera ordinea evaluării folosind paranteze. 
+Operanzii nu trebuie să fie neapărat numere, pot fi de asemenea subexpresii:
+				
+				<div id="cod">
+				<pre>
+double res = (3 + 2) / 2.0 * 3; // 7.5
+				</pre>
+				</div>
+				
+				Dacă nu sunteţi siguri de ordinea în care vor fi evaluate expresiile, vă recomand să folosiţi parantezele. Nu strică şi nu scad performanţa programului.
+Operatorul ++ creşte valoarea variabilei cu 1, iar operatorul -- scade valoarea variabilei cu 1. 
+Când sunt folosiţi ca prefix, operatorii returnează noua valoare a variabilei, iar când sunt folosiţi ca sufix operatorii returnează valoarea curentă a variabilei. În ambele cazuri variabila este modificată, diferenţa constă în valoarea returnată. Exemplu:
+				
+				<div id="cod">
+				<pre>
+int a = 2, b = 2;
+int x = a++;  // sufix: se returneaza 2
+int y = ++b;  // prefix: se returneaza 3
+
+cout << x << ' ' << y << '\n';  // 2 3
+cout << a << ' ' << b;  // 3 3
+				</pre>
+				</div>
+				
+				Aceşti operatori vor fi folosiţi cel mai des în structurile iterative (for, while etc.). Au prioritatea mai mare ca înmulţirea şi împărţirea!
+				
+				<div  id="subtitlu">
+					ATRIBUIRE COMPUSĂ | TYPE CASTING
+				</div>
+				
+				Atunci când vrem să actualizăm valoarea unei variabile vom folosi probabil această expresie a = a + b, unde a creşte cu valoarea lui b. 
+Există totuşi o notaţie prescurtată pentru acest tip de atribuire:
+
+				<div id="cod">
+				<pre>
+variabila operator= expresie;
+				</pre>
+				</div>
+				
+				De exemplu:
+				
+				<div id="cod">
+				<pre>
+int a = 4, b = 2;
+a += b + 1; // echivalent cu: a = a + (b + 1);
+a *= b - 2; // echivalent cu: a = a * (b - 2);
+a %= (b - 1) + 5; // echivalent cu: a = a % ((b - 1) + 5);
+				</pre>
+				</div>
+				
+				Type casting sau conversia de tip este metoda prin care puteţi converti o valoare de un tip într-un alt tip. Se realizează cu operatorul static_cast. De exemplu, dacă avem un int şi vrem să-l convertim în double, folosim:
+				
+				<div id="cod">
+				<pre>
+int a = 7; double x;
+x = static_cast<double>(a);
+				</pre>
+				</div>
+				
+				Sintaxa generală:
+				
+				<div id="cod">
+				<pre>
+static_cast<tip>(expresie);
+				</pre>
+				</div>
+				
+				Acest operator nu modifică valoarea variabilei convertite, ci o returnează ca o valoare nouă convertită în tipul specificat. Folosind conversia puteţi afla valoarea ASCII a unui char:
+				
+				<div id="cod">
+				<pre>
+int val; char p = 'A';
+val = static_cast<int>(p); // 65
+				</pre>
+				</div>
+				
+				Metoda învechită, aproximativ echivalentă cu cea de sus, este următoarea:
+				
+				<div id="cod">
+				<pre>
+int val; char p = 'A';
+val = (int)p;
+// sau
+val = int(p);
+				</pre>
+				</div>
+				
+				Atunci când convertiţi din double (sau float) într-un tip întreg (int, short, long etc.) veţi pierde partea fracţionară (de după punctul zecimal). Nu se fac rotunjiri! Exemplu:
+				
+				<div id="cod">
+				<pre>
+double epsilon = 4.9565;
+int alpha = static_cast<int>(epsilon); // 4
+				</pre>
+				</div>
+				
+				Sfat: Oriunde puteţi avea o constantă literală în program, puteţi avea şi o expresie, deoarece expresia, în cele din urmă, va fi evaluată la o singură valoare.
+				
+			</div>
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

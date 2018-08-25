@@ -1,0 +1,272 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Identificatori - Variabile - Atribuire
+			</div>
+			<div id="lectie">
+			
+				<div id="subtitlu">
+					IDENTIFICATORI
+				</div>
+			
+				Identificatorii reprezintă numele dat entităţilor dintr-un program C++.
+Identificatorii pot începe cu literă sau underscore (_) şi pot continua numai cu litere, cifre sau underscore. Exemplu:
+				
+				<div id="cod">
+				<pre>
+Apple, _mCount, startDownload1
+				</pre>
+				</div>
+				
+				Exemplu de identificatori nevalizi:
+				
+				<div id="cod">
+				<pre>
+1apple, _mCount.20, 123
+				</pre>
+				</div>
+				
+				Aceştia vor fi respinşi de compilator. Nu sunt identificatori valizi deoarece: primul începe cu o cifră, al doilea conţine un caracter nepermis (punct), iar ultimul este un număr. 
+C++ este case-sensitive, deci Home este diferit de HoMe. 
+Nu folosiţi ca identificatori cuvintele rezervate - reserved keywords - şi identificatorii predefiniţi (de exemplu cout). 
+Deşi este posibil să redefiniţi aceşti identificatori, nu recomand asta deoarece fac parte din bibliotecile standard C++, şi cu siguranţă veţi avea nevoie de acestea. 
+De cele mai multe ori, IDE-urile colorează cuvintele rezervate în albastru, deci nu trebuie să le învăţaţi.
+Nu există limită pentru numărul de caractere pe care-l poate avea un identificator. Unele compilatoare vor lua în considerare doar un anumit număr de caractere. Este un număr mare deci nu vă faceţi griji. 
+O convenţie populară (care a devenit universală în OOP) de numire este camelCase. În notaţia camelCase, literele mari sunt folosite pentru a delimita cuvintele dintr-un identificator. De exemplu:
+				
+				<div id="cod">
+				<pre>
+bigApple, getName, setCount, estePrim
+				</pre>
+				</div>
+				
+				Prima literă poate fi mare, dar asta de obicei când numiţi clase (tipuri definite de programator).
+				
+				<div id="subtitlu">
+					VARIABILE
+				</div>
+				
+				De cele mai multe ori programele lucrează cu informaţii. Aceste informaţii trebuie salvate undeva. Acest undeva este memoria.
+Pentru a putea manipula informaţia în program, folosim variabile. Variabilele trebuie declarate înainte de a putea fi folosite. A declara o variabilă înseamnă:
+				<ol>
+					<li>  Să specifici ce fel de valori vei memora în respectiva variabilă</li>
+					<li>  Să-i dai un nume</li>
+				</ol>
+				
+				Tipul de dată specifică ce valori poate memora o variabilă şi cât spaţiu va ocupa în memorie. 
+Calculatorul trebuie să cunoască tipul de dată al variabilei deoarece pe baza acestuia stabileşte cât spaţiu rezervă variabilei respective şi stabileşte algoritmii de codificare şi decodificare ai informaţiei.
+De exemplu, caracterul 'a' în memorie este 1100001, dar acest şir de 1 şi 0 este de fapt numărul 97 scris în binar. Deoarece calculatorul ştie (datorită tipului de date) că lucrează cu un caracter, acesta va afişa (atunci când îi cerem) pe ecran caracterul a în loc de numărul 97. 
+Calculatorul ştie permanent adresa de memorie a fiecărei variabile. Astfel poate să actualizeze informaţia stocată în respectiva locaţie. 
+Puteţi afla adresa de memorie a variabilei folosind operatorul & (voi discuta mai multe despre asta în tutorialul despre pointeri).
+				
+				<div id="cod">
+				<pre>
+int numar;
+double pi, epsilon;
+				</pre>
+				</div>
+				
+				Prima linie declară o variabilă de tip int care poate memora numai numere întregi (integer). 
+A doua linie declară două variabile de tip double care pot memora numere reale (floating-point). 
+Observaţi că puteţi declara mai multe variabile de acelaşi tip pe aceeaşi linie despărţite prin virgulă. De asemenea, instrucţiunea de declarare se termină cu punct şi virgulă. 
+Pe lângă int şi double mai există tipurile char, float, bool, short, long. Toate acestea se numesc tipuri fundamentale (tipuri primitive). 
+Tabelul cu tipurile fundamentale îl găsiţi aici. NU trebuie să-l memoraţi!
+Trebuie doar să ştiţi că int ocupă de obicei 4 bytes şi este folosit pentru numere întregi, double ocupă 8 bytes şi este folosit pentru numere reale, iar char ocupă 1 byte şi este folosit pentru caractere ASCII. 
+Tipurile întregi sunt: short (2 bytes), int, long (8 bytes). Puteţi trata char ca pe un tip întreg - deoarece fiecărui caracter ASCII îi corespunde un număr întreg - dar nu recomand acest lucru.
+Tipurile reale sunt: float (4 bytes) şi double. 
+Tipul bool ocupă 1 byte şi memorează doar două valori: true şi false. 
+				
+				<div id="cod">
+				<pre>
+// Sintaxa de declarare
+tip_data variabila1, variabila2, variabila3, ..., variabilaN;
+
+// Exemple
+int x, y, z;
+char litera; bool ok;
+double alfa, theta;
+				</pre>
+				</div>
+				
+				Fiecare din tipurile întregi pot fi unsigned, însemnând că reprezintă doar numere întregi pozitive. Evident că mulţimea de valori va fi mai mare. 
+De exemplu, dacă int ia valori din intervalul [-2,147,483,647 până la 2,147,483,647] atunci unsigned int va lua valori din intervalul [0 la 4,294,967,295].
+				
+				<div id="subtitlu">
+					ATRIBUIREA
+				</div>
+				
+				Atribuirea (asignarea) în C++ se face cu operatorul = (operatorul de atribuire). Atribuirea este operaţia prin care puteţi schimba valoarea unei variabile în mod direct. 
+				
+				<div id="cod">
+				<pre>
+int a = 40;
+				</pre>
+				</div>
+				
+				Mai sus am atribuit variabilei a valoarea 40. Observaţi că am făcut acest lucru imediat după ce am declarat variabila. Se citeşte a ia valoarea 40. (NU vă gândiţi la noţiunea de egalitate din matematică. Pentru asta avem operatorul ==).
+Atunci când sunt declarate, variabilele nu au o valoare bine definită. De aceea este important să iniţializaţi o variabilă înainte de a o folosi. 
+Variabilele declarate global (în afara oricărei funcţii şi clase) sunt iniţializate automat cu valoarea implicită. Pentru tipurile întregi aceasta este 0, pentru bool este false, iar pentru char este '\0'. 
+Se zice că o variabilă este iniţializată atunci când îi atribuiţi o valoare pentru prima dată. 
+Mecanismul de asignare funcţionează în felul următor:
+Partea din dreapta operatorului = (rvalue), care poate fi o variabilă, o constantă, sau o expresie, este evaluată, şi rezultatul evaluării este memorat în partea din stânga operatorului = (lvalue), care trebuie să fie o variabilă. 
+				
+				<div id="cod">
+				<pre>
+int x;
+x = 45 + 32;
+				</pre>
+				</div>
+				
+				Variabila x are valoarea 77. 
+Deoarece operatorul = returnează valoarea atribuită variabilei, este posibil să-l folosim în felul următor:
+				
+				<div id="cod">
+				<pre>
+int a, b;
+a = b = 5;
+				</pre>
+				</div>
+				
+				Atenţie! Operaţia de atribuire este evaluată de la dreapta la stânga!! 
+În exemplu, b ia valoarea 5, iar apoi a ia valoarea returnată de operatorul = din subexpresia b = 5, adică a ia valoarea 5.
+Fie următorul exemplu:
+
+				<div id="cod">
+				<pre>
+int a = 4, b;
+b = a = 3;
+				</pre>
+				</div>
+				
+				Atât a cât şi b vor fi 3. 
+Atunci când daţi valori variabilelor încercaţi să nu amestecaţi tipurile. De exemplu unei variabile de tip int nu-i daţi valoarea 5.678 (double). Bineînţeles că în variabila int va fi memorat doar 5 (partea întreagă a lui 5.678), deoarece compilatorul face conversia automat. Dar aceste conversii automate, chiar dacă nu generează erori, pot duce la buguri în program.
+Rulaţi următorul program:
+
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a, b = 10;
+    double x, z, pi = 3.14;
+    
+    a = b = 30;
+    x = pi;     // x este initializat
+    z = x * pi; // * - inmultire
+    b = (a + b) - 2 * b;
+    
+    // cout afiseaza pe ecran
+    cout << a << ' ' << b << ' ' << x << ' ' << z;
+    system("PAUSE"); // PAUZA
+    return 0;
+}
+				</pre>
+				</div>
+				
+			</div>		
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

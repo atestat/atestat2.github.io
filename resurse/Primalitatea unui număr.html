@@ -1,0 +1,174 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Primalitatea unui numar
+			</div>
+			<div id="lectie">
+				
+				Un număr prim este un număr natural mai mare ca 1 ce nu are alţi divizori în afară de 1 şi el însuşi. De exemplu: 2 are divizori pe 1 şi 2; 5 are divizorii 1 şi 5; 11 are divizorii 1 şi 11. Acestea sunt numere prime. 
+Fie n numărul pe care vrem să-l testăm. În loc să testăm dacă n are divizori în intervalul [2, n-1], vom testa dacă are divizori în intervalul [2, sqrt(n)], deoarece un număr neprim are cel puţin un divizor mai mic sau egal cu sqrt(n). Implementarea algoritmului în C++:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+bool estePrim(int n)
+{
+    for(int i = 2; i <= sqrt(n); i++)
+        // Daca i divide n, atunci n nu este prim
+        if(n % i == 0) return false;
+    // Daca am ajuns aici inseamna ca n este prim
+    return true;
+}
+				</pre>
+				</div>
+				
+				Există totuşi o versiune de 3 ori mai rapidă decât versiunea în care testăm toţi divizorii până la n-1. Se observă că aproape toate numerele prime se scriu sub forma 6k +- 1 unde k este un număr întreg (Am zis aproape deoarece 2 şi 3 nu sunt de această formă, dar sunt prime, iar pentru k=4 numărul nu este prim). Aşadar trebuie să testez dacă n este 2 sau 3, altfel dacă nu este divizibil cu niciunul din următoarele numere: 2, 3 sau numerele de forma 6k +- 1 <= sqrtn. Totuşi această metodă nu oferă întotdeauna un rezultat corect. Dacă doriţi mai multe detalii intraţi aici. Implementarea algoritmului în C++:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+bool isPrime(int n)
+{
+    // Daca este 2 sau 3 atunci este prim
+    if(n == 2 || n == 3) return true;
+    // Daca este divizibil cu 2 sau 3 atunci NU este prim
+    if(n % 2 == 0 || n % 3 == 0) return false;
+    for(int k = 1; 6*k-1 <= sqrt(n); k++)
+    {
+        // Daca este divizibil cu 6*k -/+ 1 atunci NU este prim
+        if(n % (6*k-1) == 0 || n % (6*k+1) == 0) return false;
+    }
+    // Daca am ajuns aici, inseamna ca este prim
+    return true;
+}
+				</pre>
+				</div>
+				
+				Puteţi folosi aceşti algoritmi pentru a genera toate numerele prime până la un anumit număr. De exemplu:
+				
+				<div id="cod">
+				<pre>
+int main()
+{
+    for(int i = 2; i <= 1000; i++)
+        if(isPrime(i))  cout << i << '\n'; 
+
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Există metode mai rapide de generare a numerelor prime, dar pe care nu le voi prezenta aici. 
+				
+			</div>		
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

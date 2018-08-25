@@ -1,0 +1,271 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Vectori - Tablouri de memorie
+			</div>
+			<div id="lectie">
+				
+				<div id="subtitlu">
+					VECTORI
+				</div>
+				
+				Un vector (array), sau tablou de memorie este o colecţie de date stocate în locaţii succesive din memorie.
+Toate elementele vectorului au acelaşi tip de dată. Un vector se declară în felul următor:
+				
+				<div id="cod">
+				<pre>
+tip nume[numar_elemente];
+				</pre>
+				</div>
+				
+				De exemplu, un vector cu 100 de întregi.
+				
+				<div id="cod">
+				<pre>
+int yoyo[100];
+				</pre>
+				</div>
+				
+				<mark>Numărătoarea elementelor începe de la zero.</mark>
+				Putem accesa şi modifica un element de-al vectorului cu următoarea sintaxă:
+				
+				<div id="cod">
+				<pre>
+nume[index];
+				</pre>
+				</div>
+				
+				De exemplu, pot atribui elementului al treilea valoarea 10.
+				
+				<div id="cod">
+				<pre>
+yoyo[2] = 10;
+				</pre>
+				</div>
+				
+				ATENŢIE: Primul element este yoyo[0], iar ultimul este yoyo[99]. 
+Aceşti vectori se zic statici (static arrays) deoarece numărul de elemente şi spaţiul de memorie ocupat este constant în timpul compilării. (numar_elemente trebuie să fie o constantă). 
+Vectorii declaraţi global, în afara oricărei funcţii, sunt iniţializaţi cu zero. 
+La declarare vectorii pot fi iniţializaţi, aşa cum sunt iniţializate variabilele, dar cu o sintaxă diferită.
+				
+				<div id="cod">
+				<pre>
+int vec[3] = {1, 2, 3};
+				</pre>
+				</div>
+				
+				Sau, doar în acest caz, puteţi omite numărul de elemente:
+				
+				<div id="cod">
+				<pre>
+int vec[] = {1, 2, 3};
+				</pre>
+				</div>
+				
+				Deoarece lungimea va fi dedusă de compilator pe baza numărului de date dintre acolade.
+Parcurgerea unui vector se face cel mai simplu cu un loop, în general un for.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int cifrePare[] = { 0, 2, 4, 6, 8 };
+    for (int i = 0; i < 5; i++)
+        cout << cifrePare[i];
+    return 0;
+}
+				</pre>
+				</div>
+				
+				ATENŢIE: Accesarea elementelor din afara vectorului - cum ar fi cifrePare[5] - poate produce rezultate neaşteptate, ca instabilitatea programului sau, în cel mai rău caz, un crash al programului.
+				
+				<div id="subtitlu">
+					VECTORI MULTIDIMENSIONALI
+				</div>
+				
+				Vectorii multidimensionali sunt vectori ai vectorilor. Sintaxa generală de declarare este:
+				
+				<div id="cod">
+				<pre>
+tip nume[nr_elem1][nr_elem2]...[nr_elemN]
+				</pre>
+				</div>
+				
+				Aşa cum vedeţi, un vector poate avea oricâte dimensiuni vreţi. Totuşi, spaţiu de memorie fiind limitat, nu veţi întâlni vectori cu mai mult de 3 dimensiuni. 
+Un vector bidimensional poate fi imaginat ca o matrice (un tabel cu linii şi coloane). 
+De exemplu, matricea int mat[5][3]; are 5 linii şi 3 coloane.
+În realitate, în memorie, elementele tot în ordine secvenţială sunt stocate. Vectorul (matricea) de mai sus este echivalent cu int mat[15];. 
+Iniţializarea este similară cu cea a vectorilor unidimensionali:
+				
+				<div id="cod">
+				<pre>
+int mat[2][3] = { {1, 2, 3}, {4, 5, 6} };
+				</pre>
+				</div>
+				
+				Parcurgerea se face tot cu un for:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int cifre[2][3] = { {1, 2, 3}, {4, 5, 6} };
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++)
+            cout << cifre[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Observaţi cum se accesează elementul de pe linia i şi coloana j.
+				
+				<div id="cod">
+				<pre>
+cifre[i][j];
+				</pre>
+				</div>
+				
+				Programul va afişa:
+				
+				<div id="cod">
+				<pre>
+1 2 3
+4 5 6
+				</pre>
+				</div>
+				
+				Primul element al matricei este cifre[0][0], adică 1.
+Dacă nu vă place numărătoarea de la zero, puteţi declara vectorul cu 1 + nr_elemente, astfel încât să începeţi numărătoarea de la 1, dar să aveţi spaţiu pentru nr_elemente. Exemplu:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int yoyo[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    for (int i = 1; i < 10; i++)
+        cout << yoyo[i] << i << ' ';
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Acum indicele i coincide cu yoyo[i]. 
+Primul element al vectorului, yoyo[0], este ignorat, şi al doilea, yoyo[1], este considerat noul prim.
+				
+			</div>
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

@@ -1,0 +1,169 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Metoda bisectiei
+			</div>
+			<div id="lectie">
+				
+				Să zicem că avem funcţia f(x) = 3x + 3 şi vrem să găsim acel x pentru care ecuaţia f(x) = 0 este adevărată, adică vrem să-i găsim rădăcina.
+O primă metodă ar fi să alegem un interval unde credem că s-ar afla acest x, să luăm pe rând toate valorile din interval şi să vedem pentru care valoare f(x) = 0 este adevărată. Acest algoritm necesită O(n) timp de execuţie. Îl putem face şi mai rapid. Cum? Prin metoda bisecţiei.
+Metoda bisecţiei constă în reducerea intervalului de căutare prin înjumătăţirea repetată şi selectarea subintervalului în care se găseşte rădăcina. Din acest motiv algoritmul este logaritmic O(log{n}). Algoritmul este similar cu căutarea binară. 
+Ca metoda să funcţioneze trebuie ca funcţia, căreia vrem să-i găsim rădăcina, să fie continuă. 
+Conform teoremei Cauchy-Bolzano (teorema valorii intermediare) dacă f (o funcţie oarecare) este continuă pe intervalul [a, b] şi f(a) şi f(b) au semne opuse, adică f(a) * f(b) < 0, atunci există o valoare c din intervalul (a, b) pentru care f(c) = 0.
+Este evident, deoarece dacă la extremităţi funcţia are semne opuse atunci undeva graficul intersectează axa Ox. Graficul funcţiei f(x) = 3x + 3 este următorul:
+				<br>
+				<img src="img_fnt.png" id="img_fnt" width="918" height="800px"/>
+				<br>
+				Observaţi că intersectează axa Ox în punctul -1.
+Pentru această funcţie voi alege intervalul [a, b] - a, b numere reale. Intervalul va fi împărţit în două subintervale: [a, c] şi [c, b], unde c = (a + b)/2. Căutarea rădăcinii se va face în subintervalul în care funcţia f(x) = 3x + 3 îşi schimbă semnul, astfel:
+				
+				<ol>
+				
+					<li>Dacă f(a) * f(c) < 0, atunci căutarea continuă în intervalul [a, c];</li>
+					<li>Altfel căutarea continuă în intervalul [c, b].</li>
+				
+				</ol>
+				
+				Procesul se termină atunci când se ajunge la intervalul [a, b] pentru care b-a < sigma, unde sigma este eroarea acceptată pentru o precizie de 5 zecimale şi are valoarea 0.00001. Nu uitaţi că calculele cu float şi double nu sunt foarte precise, de aceea trebuie să luăm în considerare o marjă de eroare.
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+// Functia f
+double f(double x) 
+{
+    return 3*x + 3;
+}
+
+double sigma = 0.00001;
+
+// Metoda bisectiei
+double getRoot(double a, double b)
+{
+    double c;
+    if(b-a < sigma) return (a+b) / 2.0; // S-a gasit radacina, o returnez
+    else
+    {
+        c = (a+b) / 2.0; 
+        if(f(a) * f(c) < 0) return getRoot(a, c);
+        else return getRoot(c, b);
+    }
+}
+
+int main()
+{
+    // Se va afisa -0.999999 care este foarte aproape de -1
+    cout << getRoot(-10, 10);
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+			</div>		
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>

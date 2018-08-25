@@ -1,0 +1,667 @@
+<html>
+
+	<head>
+	
+		<title> Limbajul C++ </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div id="antet">
+			PROIECT HTML / CSS / JAVA SCRIPT
+		</div>
+		
+		<div id="meniu">
+			<table><tr>
+				<td><img src="cpp_programming.png" height="41px"/></td>
+				<td><ul>
+
+						<li><a href="../Proiect.html"><table><th>
+								<td><pre> </pre></td>
+								<td><font size="5px">Acasa</font></td>
+								<td><pre> <img src="menu-avatar.png" height="31px"/></pre></td>
+								</th></table>
+						</a></li>
+						
+						<li><a> Lectii</a>
+	
+							<ul>
+		
+								<li><a> Tutoriale C++</a>
+									<ul>
+									
+										<li><a href="Structura unui program C++.html"> Structura unui program C++</a></li>
+										<li><a href="Identificatori - Variabile - Atribuire.html"> Identificatori - Variabile - Atribuire</a></li>
+										<li><a href="Constante - Operatori Aritmetici - Atribuire compusă.html"> Constante - Operatori Aritmetici - Atribuire compusă</a></li>
+										<li><a href="Input Output cu CIN şi COUT.html"> Input / Output cu CIN şi COUT</a></li>
+										<li><a href="Booleeni şi Structuri de Control.html"> Booleeni şi Structuri de Control</a></li>
+										<li><a href="Vectori - Tablouri de memorie.html"> Vectori - Tablouri de memorie</a></li>
+										<li><a href="Funcţii (Subprograme).html"> Funcţii (Subprograme)</a></li>
+										<li><a href="Pointeri, Memorie Dinamică, Referinţe.html"> Pointeri, Memorie Dinamică, Referinţe</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Algoritmi</a>
+									<ul>
+									
+										<li><a href="Primalitatea unui număr.html"> Primalitatea unui număr</a></li>
+										<li><a href="Generarea Numerelor Prime.html"> Generarea Numerelor Prime</a></li>
+										<li><a href="Algoritmul lui Euclid (CMMDC).html"> Algoritmul lui Euclid (CMMDC)</a></li>
+										<li><a href="Căutarea Binară.html"> Căutarea Binară</a></li>
+										<li><a href="Metoda bisecţiei.html"> Metoda bisecţiei</a></li>
+									
+									</ul>
+								</li>
+								<li><a> Structuri de date</a>
+									<ul>
+									
+										<li><a href="Lista Liniară Simplu Înlănţuită.html"> Lista Liniară Simplu Înlănţuită</a></li>
+										<li><a href="Lista Liniară Dublu Înlănţuită.html"> Lista Liniară Dublu Înlănţuită</a></li>
+										<li><a href="Lista Circulară Simplu Înlanţuită.html"> Lista Circulară Simplu Înlanţuită</a></li>
+										<li><a href="Stiva (Stack).html"> Stiva (Stack)</a></li>
+										<li><a href="Coada (Queue).html"> Coada (Queue)</a></li>
+									
+									</ul>
+								</li>
+			
+							</ul>
+	
+						</li>
+	
+						<li><a> Probleme</a>
+	
+							<ul>
+		
+								<li><a href="Tinta.html"> Tinta</a></li>
+								<li><a href="Problema_2.html"> Problema_2</a></li>
+								<li><a href="Problema_3.html"> Problema_3</a></li>
+								<li><a href="Problema_4.html"> Problema_4</a></li>
+								<li><a href="Problema_5.html"> Problema_5</a></li>
+								<li><a href="Problema_6.html"> Problema_6</a></li>
+								<li><a href="Problema_7.html"> Problema_7</a></li>
+		
+							</ul>
+	
+						</li>
+	
+						<li><a href="Test.html"> Test</a></li>
+
+					</ul></td></tr></table>
+		</div>
+		
+		<div id="continut">
+			<div id="titlu_lectie">
+				Lista Liniara Dublu Inlantuita
+			</div>
+			<div id="lectie">
+				
+				Lista Liniară Dublu Înlanţuită este similară cu Lista Simplu Înlănţuită. Singura diferenţă este că fiecare nod are o legătură atât către nodul succesor cât şi nodul predecesor. În continuare voi implementa clasa ListaD. Vă reamintesc: Pentru a semnala sfârşitul listei folosim NULL. Pointerului next al ultimului nod (nodul terminal) îi atribuim adresa NULL (Pentru cei care folosiţi compilatoare noi, cum ar fi cel din Visual Studio, folosiţi nullptr în loc de NULL, deoarece NULL este doar un simplu macro, este 0, este un întreg şi nu reprezintă concret o adresă inexistentă). Vedeţi tutorialul despre listele simplu înlănţuite înainte de a-l citi pe acesta. Mai jos este o imagine ce ilustrează conceptul de listă dublu înlănţuită (LDÎ):
+				
+				<div id="subtitlu">
+					Implementarea Listei Dublu Înlănţuite
+				</div>
+				
+				Voi defini o clasă numită ListaD, ce implementează LDÎ. Fiecare nod va memora trei valori, membrul data care stochează informaţia propriu-zisă (în acest caz va fi un întreg), membrul next care este un pointer (legătură) către următorul nod al listei şi membrul previous care este un pointer către nodul anterior al listei.
+				
+				<div id="cod">
+				<pre>
+class ListaD
+{
+public:
+    struct Iterator; // Declaratie forward
+    static const Iterator END; // Iterator NULL
+    // Constructor - Initializarea listei
+    ListaD() { head = tail = nullptr; /*Se creeaza lista vida*/ }
+    // Destructor - Distrugerea listei
+    ~ListaD() { if(!isEmpty()) clear(); }  
+    void push_front(int elem); // Inserare in fata primului nod
+    void push_back(int elem);  // Inserare dupa ultimul nod
+    void insert_before(int elem, Iterator nod); // Inserare inainte de nod
+    void insert_after(int elem, Iterator nod);  // Inserare dupa nod
+    Iterator search(int value) const; // Cauta value in lista
+    void pop_front(); // Elimina nodul din fata
+    void pop_back();  // Elimina ultimul nod
+    void remove(Iterator nod); // Elimina nodul nod
+    // Returneaza un iterator catre inceputul listei
+    Iterator front() const { return Iterator(head); }
+    // Returneaza un iterator catre nodul tail
+    Iterator back() const { return Iterator(tail); } 
+    bool isEmpty() const { return head == nullptr; } // Este lista vida?
+    void clear(); // Stergerea completa a listei
+
+private:
+    struct Nod  // Clasa Helper; Implementeaza un nod de lista
+    {
+        int data;   // informatia propriu-zisa
+        Nod * next; // urm
+        Nod * previous; // ant
+    };
+    Nod * head; // prim
+    Nod * tail; // ultim
+public:
+    struct Iterator // Un pointer inteligent
+    {
+        friend class ListaD; // Lista are acces la membrii privati ai lui Iterator
+        Iterator() { list = nullptr; }
+        Iterator(Nod * ls) { list = ls; }
+        // Supraincarc operatorul * (dereferentiere)
+        int& operator*() { if(list != nullptr) return list->data; else throw "Null iterator!"; }
+        // Prefix - Trec la urmatorul nod
+        Iterator& operator++() { list = list->next; return *this; }  
+        // Postfix
+        Iterator operator++(int) { Iterator temp = *this; ++(*this); return temp; }
+        // Prefix - Trec la nodul anterior
+        Iterator& operator--() { list = list->previous; return *this; }  
+        // Postfix
+        Iterator operator--(int) { Iterator temp = *this; --(*this); return temp; }
+        bool operator==(const Iterator& it) 
+		const { if(it.list == this->list) return true; else return false; }
+        bool operator!=(const Iterator& it) 
+		const { if(!(it == *this)) return true; else return false; }
+    private:
+        Nod * list;
+    };
+};
+				</pre>
+				</div>
+				
+				În continuare voi implementa numai algoritmii care diferă faţă de algoritmii listei simplu înlănţuite. 
+				
+				<div id="subtitlu">
+					Adăugarea unui nod la listă
+				</div>
+				
+				Avem 3 cazuri:
+				
+				<ol>
+				
+					<li>Inserarea în faţa primului nod;</li>
+					<li>Inserarea după ultimul nod;</li>
+					<li>Inserarea în interiorul listei.</li>
+				
+				</ol>
+				
+				Inserarea în faţa primului nod [push_front()]. Aici avem două cazuri: dacă lista este vidă atunci adăugăm atât la head cât şi la tail primul nod, altfel adăugăm nodul în faţa listei. Aloc memorie pentru noul nod (să zicem p) -> Scriu informaţia în p -> Leg nodul p de nodul head şi previous indică NULL -> p devine noul head (adică head indică adresa lui p).
+				
+				<div id="cod">
+				<pre>
+void ListaD::push_front(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = nullptr; // Fiind singurul nod, urmatorul este NIMIC adica NULL
+        head->previous = nullptr; // Fiind singurul nod, anteriorul este NIMIC adica NULL
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->previous = nullptr; // Devenind head, previous indica NULL
+        nod->next = head;    // Leg nod de head
+        head->previous = nod; // Predecesorul fostului head este 'nod'
+        head = nod;          // nod devine noul head
+    }
+}
+				</pre>
+				</div>
+				
+				Inserarea după ultimul nod [push_back()]. Şi aici avem cele două cazuri. Dacă lista nu este vidă, adăugăm nodul la sfârşitul listei. Se alocă memorie pentru noul nod p -> Scriu informaţia în nod -> Leg nodul tail de nodul p şi pointerul previous de nodul tail -> p devine noul tail (adică p se leagă de NULL şi tail indică acum nodul p).
+				
+				<div id="cod">
+				<pre>
+void ListaD::push_back(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = nullptr; // Fiind singurul nod, urmatorul este NIMIC adica NULL
+        head->previous = nullptr; // Fiind singurul nod, anteriorul este NIMIC adica NULL
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->next = nullptr; // Devenind nod terminal, va fi legat de NULL
+        nod->previous = tail; // previous indica tail
+        tail->next = nod;    // Fostul tail este legat de noul tail
+        tail = nod;          // nod devine tail
+    }
+}
+				</pre>
+				</div>
+				
+				Inserarea în interiorul listei. <pre></pre>
+Inserarea după nodul q (unde q este un nod al listei pe care îl obţineţi iterând prin listă). Se alocă memorie pentru noul nod (newNod) -> Leg nodul newNod de succesorul nodului q, iar predecesorul său va fi q -> Nodul q se leagă de nodul newNod, iar predecesorul succesorului lui q este newNod. Dacă q a fost nod terminal, atunci newNod este acum nod terminal.
+				
+				<div id="cod">
+				<pre>
+void ListaD::insert_after(int elem, Iterator nod)
+{
+    Nod * newNod = new Nod; // Aloc memorie pentru noul nod
+    newNod->data = elem;    // Scriu informatia in data
+    newNod->next = nod.list->next; // newNod se leaga de succesorul lui 'nod'
+    newNod->previous = nod.list; // Predecesorul lui newNod este 'nod'
+    // Daca nodul 'nod' a fost ultimul nod, atunci nodul newNod devine nod terminal
+    if(nod.list == tail) tail = newNod;
+    else nod.list->next->previous = newNod; 
+	// Predecesorul succesorului lui 'nod' este newNod
+    nod.list->next = newNod; // Nodul 'nod' se leaga de newNod
+}
+				</pre>
+				</div>
+				
+				Chiar dacă am spus nodul nod, nod nu este de fapt Nod, este un obiect Iterator. Prin nodul nod mă refer la nodul încapsulat în obiectul Iterator nod (adică membrul list).
+				<pre></pre>
+				
+				Inserarea înainte de nodul q. Nodul newNod se inserează între predecesorul lui q şi q. Succesorul lui newNod este q, predecesorul este q-previous. Nodul newNod va fi succesorul lui q->previous şi anteriorul lui q. De asemenea verificăm dacă q este head, caz în care newNod devine head.
+				
+				<div id="cod">
+				<pre>
+void ListaD::insert_before(int elem, Iterator nod)
+{
+    Nod * newNod = new Nod; // Aloc memorie pentru noul nod
+    newNod->data = elem; // Scriu informatia in data
+    newNod->next = nod.list; // Succesorul lui newNod este 'nod'
+    newNod->previous = nod.list->previous; 
+	// Predecesorul lui newNod este predecesorul lui 'nod'
+    // Daca nodul 'nod' a fost primul nod, atunci nodul newNod devine head
+    if(nod.list == head) head = newNod;
+    else nod.list->previous->next = newNod; 
+	// Succesorul predecesorului lui 'nod' este newNod
+    nod.list->previous = newNod; // Predecesorul lui 'nod' este newNod
+}
+				</pre>
+				</div>
+				
+				Inserţia (cei patru algoritmi) în listă se realizează în timp constant O(1).
+				
+				<div id="subtitlu">
+					Parcurgerea listei
+				</div>
+				
+				Lista se parcurge folosind un Iterator. Algoritmul de parcurgere l-am implementat deja în funcţia operator++() (ambele) a clasei Iterator şi funcţia operator--() pentru parcurgerea în ordine inversă. Ideea este următoarea: Se obţine un pointer (în cazul meu un Iterator) către primul nod (head), apoi se parcurge lista actualizând pointerul (iteratorul) curent cu următorul element (nod = nod->next) până când pointerul curent indică NULL (în cazul meu iteratorul ajunge la end()), adică pointerul curent indică nodul imediat următor după tail. Pentru parcurgerea inversă, pointerul (în cazul meu iteratorul) indică nodul tail, iar acesta se actualizează cu predecesorul până când pointerul curent indică NULL (adică end()).
+				<pre></pre>
+				Iterator& operator++() { list = list->next; return *this; }<pre></pre>
+Iterator& operator--() { list = list->previous; return *this; } <pre></pre>
+
+				Împreună cu funcţiile front(), back() şi constanta END putem parcurge lista. Cele două funcţii şi constanta END sunt definite în felul următor:
+				
+				<div id="cod">
+				<pre>
+ListaD::Iterator ListaD::front() const { return Iterator(head); }
+ListaD::Iterator ListaD::back() const { return Iterator(tail); }
+static const ListaD::Iterator ListaD::END = nullptr; // Iterator NULL
+				</pre>
+				</div>
+				
+				Observaţi că am înlocuit funcţia end() (vezi tutorialul despre LSÎ) cu constanta statică END care este un Iterator ce încapsulează un Nod NULL. Acesta este nodul imediat următor după nodul tail şi imediat anterior nodului head al listei. Deci de fiecare dată când prelucrez lista, voi prelucra informaţiile din intervalul [front, back]. Iată algoritmul general de parcurgere a listei:
+				<pre>
+				</pre>
+				ListaD myList;  // declar o lista<pre></pre>
+				for(ListaD::Iterator iter = myList.front(); iter != myList.end(); iter++)<pre></pre>
+				{<pre></pre>
+				// Se prelucreaza (*iter)<pre></pre>
+				}<pre>
+				</pre>
+			
+				Şi în ordine inversă:
+				
+				<div id="cod">
+				<pre>
+ListaD myList;  // declar o lista
+for(ListaD::Iterator iter = myList.back(); iter != myList.end(); iter--)
+{
+ // Se prelucreaza (*iter)
+}
+				</pre>
+				</div>
+				
+				<div id="subtitlu">
+					Eliminarea unui nod din listă
+				</div>
+				
+				Avem 3 cazuri:
+				
+				<ol>
+				
+					<li>Eliminarea primului nod;</li>
+					<li>Eliminarea ultimuluiu nod;</li>
+					<li>Eliminarea unui nod din interiorul listei.</li>
+				
+				</ol>
+				
+				Eliminarea primului nod [pop_front()]. Sunt câteva cazuri care trebuie luate în considerare: lista este vidă sau lista are un singur nod.			
+				Oricum ar fi, algoritmul general este următorul: Salvez nodul head într-un nod oarecare temp -> Succesorul nodului head devine nod head şi predecesorul succesorului lui head indică NULL (deoarece succesorul devine head) -> Se eliberează memoria ocupată de obiectul referit de nodul temp (fostul head).
+				
+				<div id="cod">
+				<pre>
+void ListaD::pop_front()
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    Nod * temp = head; // Salvez adresa obiectului head
+    head->next->previous = nullptr; // Predecesorul succesorului lui head devine NULL
+    head = head->next; // Succesorul lui head devine noul head
+    delete temp; // Eliberez memoria ocupata de vechiul obiect head
+}
+				</pre>
+				</div>
+				
+				<pre></pre>Eliminarea ultimului nod [pop_back()]<pre></pre>
+				
+				Succesorul predecesorului lui tail indică NULL (deoarece predecesorul devine tail) -> Predecesorul nodului tail devine nod terminal -> Eliberez zona de memorie ocupată de fostul tail -> Predecesorul devine nod tail.
+				
+				<div id="cod">
+				<pre>
+void ListaD::pop_back()
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; }
+    Nod * temp = tail; // Salvez adresa obiectului tail
+    tail->previous->next = nullptr; // Succesorul predecesorului lui tail devine NULL
+    tail = tail->previous; // Predecesorul lui tail devine noul tail
+    delete temp; // Eliberez memoria ocupata de vechiul obiect tail
+}
+				</pre>
+				</div>
+				
+				<pre></pre>Eliminarea unui nod din interiorul listei<pre></pre>
+				
+				Eliminarea unui nod din interiorul listei este destul de simplă. Ca să eliminăm nodul p din listă, trebuie să legăm predecesorul nodului p de succesorul nodului p, apoi predecesorul succesorului nodului p de predeceosorul lui p. Algoritmul este implementat în funcţia remove() care ia ca parametru un obiect de tip Iterator.
+				
+				<div id="cod">
+				<pre>
+void ListaD::remove(Iterator nod)
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    nod.list->previous->next = nod.list->next; 
+	// Leg predecesorul lui 'nod' de succesorul acestuia
+    nod.list->next->previous = nod.list->previous; 
+	// Predecesorul succesorului lui 'nod' indica predecesorul lui 'nod'
+    delete nod.list; // Elimin nodul 'nod' 
+}
+				</pre>
+				</div>
+				
+				Algoritmul de eliminare al unui nod (toţi cei trei algoritmi) este constant \(O(1)\).
+În continuare vă propun să creaţi un nou fişier ListaD.h (header) şi să-l adăugaţi la proiectul vostru, după care în fişierul main (unde aveţi funcţia main) să adăugaţi, la început, directiva: #include "ListaD.h". Adăugaţi următorul cod în ListaD.h:
+				
+				<div id="cod">
+				<pre>
+class ListaD
+{
+public:
+    struct Iterator; // Declaratie forward
+    static const Iterator END; // Iterator NULL
+    // Constructor - Initializarea listei
+    ListaD() { head = tail = nullptr; /*Se creeaza lista vida*/ }
+    // Destructor - Distrugerea listei
+    ~ListaD() { if(!isEmpty()) clear(); }  
+    void push_front(int elem); // Inserare in fata primului nod
+    void push_back(int elem);  // Inserare dupa ultimul nod
+    void insert_before(int elem, Iterator nod); // Inserare inainte de nod
+    void insert_after(int elem, Iterator nod);  // Inserare dupa nod
+    Iterator search(int value) const; // Cauta value in lista
+    void pop_front(); // Elimina nodul din fata
+    void pop_back();  // Elimina ultimul nod
+    void remove(Iterator nod); // Elimina nodul nod
+    // Returneaza un iterator catre inceputul listei
+    Iterator front() const { return Iterator(head); }
+    // Returneaza un iterator catre nodul tail
+    Iterator back() const { return Iterator(tail); }
+    bool isEmpty() const { return head == nullptr; } // Este lista vida?
+    void clear(); // Stergerea completa a listei
+
+private:
+    struct Nod  // Clasa Helper; Implementeaza un nod de lista
+    {
+        int data;   // informatia propriu-zisa
+        Nod * next; // urm
+        Nod * previous; // ant
+    };
+    Nod * head; // prim
+    Nod * tail; // ultim
+public:
+    struct Iterator // Un pointer inteligent
+    {
+        friend class ListaD; // Lista are acces la membrii privati ai lui Iterator
+        Iterator() { list = nullptr; }
+        Iterator(Nod * ls) { list = ls; }
+        // Supraincarc operatorul * (dereferentiere)
+        int& operator*() 
+		{ if(list != nullptr) return list->data; else throw "Null iterator!"; }
+        // Prefix - Trec la urmatorul nod
+        Iterator& operator++() { list = list->next; return *this; }  
+        // Postfix
+        Iterator operator++(int) { Iterator temp = *this; ++(*this); return temp; }
+        // Prefix - Trec la nodul anterior
+        Iterator& operator--() { list = list->previous; return *this; }  
+        // Postfix
+        Iterator operator--(int) { Iterator temp = *this; --(*this); return temp; }
+        bool operator==(const Iterator& it) 
+		const { if(it.list == this->list) return true; else return false; }
+        bool operator!=(const Iterator& it) 
+		const { if(!(it == *this)) return true; else return false; }
+    private:
+        Nod * list;
+    };
+};
+// Definirea constantei END
+const ListaD::Iterator ListaD::END = nullptr;
+
+void ListaD::push_front(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = nullptr; // Fiind singurul nod, urmatorul este NIMIC adica NULL
+        head->previous = nullptr; // Fiind singurul nod, anteriorul este NIMIC adica NULL
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->previous = nullptr; // Devenind head, previous indica NULL
+        nod->next = head;    // Leg nod de head
+        head->previous = nod; // Predecesorul fostului head este 'nod'
+        head = nod;          // nod devine noul head
+    }
+}
+
+void ListaD::push_back(int elem)
+{
+    // Daca lista este vida, atunci 
+    if(isEmpty()) 
+    {
+        head = new Nod; // Aloc memorie pentru primul nod
+        head->data = elem;
+        head->next = nullptr; // Fiind singurul nod, urmatorul este NIMIC adica NULL
+        head->previous = nullptr; // Fiind singurul nod, anteriorul este NIMIC adica NULL
+        tail = head; // si tail == head
+    }
+    else  // altfel
+    {
+        Nod * nod = new Nod; // Aloc memorie pentru noul nod
+        nod->data = elem;    // Scriu informatia in data
+        nod->next = nullptr; // Devenind nod terminal, va fi legat de NULL
+        nod->previous = tail; // previous indica tail
+        tail->next = nod;    // Fostul tail este legat de noul tail
+        tail = nod;          // nod devine tail
+    }
+}
+
+void ListaD::insert_after(int elem, Iterator nod)
+{
+    Nod * newNod = new Nod; // Aloc memorie pentru noul nod
+    newNod->data = elem;    // Scriu informatia in data
+    newNod->next = nod.list->next; // newNod se leaga de succesorul lui 'nod'
+    newNod->previous = nod.list; // Predecesorul lui newNod este 'nod'
+    // Daca nodul 'nod' a fost ultimul nod, atunci nodul newNod devine nod terminal
+    if(nod.list == tail) tail = newNod;
+    else nod.list->next->previous = newNod; 
+	// Predecesorul succesorului lui 'nod' este newNod
+    nod.list->next = newNod; // Nodul 'nod' se leaga de newNod
+}
+
+void ListaD::insert_before(int elem, Iterator nod)
+{
+    Nod * newNod = new Nod; // Aloc memorie pentru noul nod
+    newNod->data = elem; // Scriu informatia in data
+    newNod->next = nod.list; // Succesorul lui newNod este 'nod'
+    newNod->previous = nod.list->previous; 
+	// Predecesorul lui newNod este predecesorul lui 'nod'
+    // Daca nodul 'nod' a fost primul nod, atunci nodul newNod devine head
+    if(nod.list == head) head = newNod;
+    else nod.list->previous->next = newNod; 
+	// Succesorul predecesorului lui 'nod' este newNod
+    nod.list->previous = newNod; // Predecesorul lui 'nod' este newNod
+}
+
+ListaD::Iterator ListaD::search(int value) const
+{
+    for(Nod* it = head; it != nullptr; it = it->next)
+    {
+        if(it->data == value) return Iterator(it); // Daca am gasit nodul il returnez
+    }
+    return END; // Nu am gasit nimic
+}
+
+void ListaD::pop_front()
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    Nod * temp = head; // Salvez adresa obiectului head
+    head->next->previous = nullptr; // Predecesorul succesorului lui head devine NULL
+    head = head->next; // Succesorul lui head devine noul head
+    delete temp; // Eliberez memoria ocupata de vechiul obiect head
+}
+
+void ListaD::remove(Iterator nod)
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; } 
+    nod.list->previous->next = nod.list->next; 
+	// Leg predecesorul lui 'nod' de succesorul acestuia
+    nod.list->next->previous = nod.list->previous; 
+	// Predecesorul succesorului lui 'nod' indica predecesorul lui 'nod'
+    delete nod.list; // Elimin nodul 'nod' 
+}
+
+void ListaD::pop_back()
+{
+    if(isEmpty()) throw "Empty List"; // Daca lista este vida
+    if(head == tail) // Daca lista are un singur nod
+    { delete head; head = tail = nullptr; return; }
+    Nod * temp = tail; // Salvez adresa obiectului tail
+    tail->previous->next = nullptr; // Succesorul predecesorului lui tail devine NULL
+    tail = tail->previous; // Predecesorul lui tail devine noul tail
+    delete temp; // Eliberez memoria ocupata de vechiul obiect tail
+}
+
+void ListaD::clear()
+{
+    Nod *it = head, *temp; 
+    while(it != nullptr)
+    {
+        temp = it; // Salvez adresa nodului curent
+        it = it->next; // Trec mai departe
+        delete temp; // Distrug nodul curent
+    }
+    head = tail = nullptr; // Lista Vida
+}
+				</pre>
+				</div>
+				
+				Iată un exemplu cu lista dublă înlănţuită:
+				
+				<div id="cod">
+				<pre>
+#include &lt;iostream&gt;
+#include "ListaD.h"
+using namespace std;
+
+int main()
+{
+    ListaD myList; // Creez o lista
+    myList.push_back(8);
+    myList.push_front(5);
+    myList.push_back(11);
+
+    for(ListaD::Iterator it = myList.front(); it != ListaD::END; it++)
+        cout << *it << ' ';
+    cout << '\n';
+
+    ListaD::Iterator p = myList.search(8);
+    myList.insert_after(16, p);
+    myList.insert_before(22, p);
+
+    // Afisez invers
+    for(ListaD::Iterator it = myList.back(); it != ListaD::END; it--)
+        cout << *it << ' ';
+    cout << '\n';
+
+    p = myList.search(8);
+    myList.remove(p);
+    myList.pop_back();
+    myList.pop_front();
+
+    // Afisez invers
+    for(ListaD::Iterator it = myList.back(); it != ListaD::END; it--)
+        cout << *it << ' ';
+    cout << '\n';
+
+    // Afisez normal
+    for(ListaD::Iterator it = myList.front(); it != ListaD::END; it++)
+        cout << *it << ' ';
+    cout << '\n';
+
+    system("PAUSE");
+    return 0;
+}
+				</pre>
+				</div>
+				
+				Output:
+				
+				<div id="cod">
+				<pre>
+5 8 11
+11 16 8 22 5
+16 22
+22 16
+				</pre>
+				</div>
+				
+				Dacă aveţi probleme cu nullptr, atunci folosiţi NULL. De asemenea vă recomand să folosiţi Visual Studio.
+				
+			</div>		
+			<div id="button">
+				<a href="#"><img src="sageata sus.png" height="50px" width="50px"/></a>
+			</div>
+		</div>
+		
+		<div id="subsol">
+			Realizat de Alex si Cristi
+		</div>
+	
+	</body>
+	
+</html>
